@@ -107,31 +107,42 @@ header.is-scrolled{background-color:rgba(208,225,235,.92);backdrop-filter:blur(1
   .feature-item{flex:1 1 calc(50% - 16px) !important;min-width:280px !important}
 }
 
-/* Hero refinement: restore prominent name and portrait, keep remaining site unchanged. */
+/* Hero composition: headline high, enlarged portrait, scene lowered on phones. */
 .hero .hero__cta{display:none !important}
 @media (min-width:1024px){
   .hero .hero__content{
     height:100svh !important;
     justify-content:flex-start !important;
-    padding-top:clamp(100px,12svh,145px) !important;
-    gap:clamp(22px,3vh,34px) !important;
+    padding-top:clamp(66px,8svh,100px) !important;
+    gap:clamp(16px,2.4vh,28px) !important;
   }
   .hero .hero__subtitle{max-width:610px !important;line-height:1.5 !important}
   .hero .hero__person{
-    height:min(95svh,1040px) !important;
+    height:min(98svh,1120px) !important;
     max-height:none !important;
-    max-width:min(49vw,740px) !important;
-    bottom:2svh !important;
+    max-width:min(54vw,800px) !important;
+    bottom:0 !important;
   }
 }
 @media (max-width:1023px){
-  .hero .hero__content{padding-top:clamp(78px,10svh,104px) !important;gap:clamp(11px,1.7vh,17px) !important}
-  .hero .hero__person{
-    max-width:min(82vw,350px) !important;
-    max-height:min(46svh,410px) !important;
-    height:auto !important;
-    margin:-4px auto 0 !important;
+  .hero{min-height:100svh !important;padding-top:0 !important}
+  .hero .hero__content{
+    padding-top:clamp(13px,2svh,23px) !important;
+    padding-bottom:0 !important;
+    gap:clamp(9px,1.25vh,14px) !important;
   }
+  .hero .hero__title{line-height:1.04 !important;margin:0 !important}
+  .hero .hero__subtitle{margin:0 !important;line-height:1.43 !important}
+  .hero .hero__subtitle span:first-child{margin-bottom:.65em !important}
+  .hero .hero__person{
+    height:min(61svh,650px) !important;
+    max-height:none !important;
+    width:auto !important;
+    max-width:min(95vw,460px) !important;
+    margin:-6px auto 0 !important;
+  }
+  .hero .hero__scroll-btn{margin-top:0 !important;padding-bottom:12px !important}
+  canvas{transform:translateY(21svh) scale(1.10) !important;transform-origin:center bottom !important}
 }
 </style>
 <style id="site-fixes">
