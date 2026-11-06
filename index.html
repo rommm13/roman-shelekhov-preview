@@ -304,7 +304,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
     --color-bg-alt:#C8DAE8;
     --color-bg-muted:#C8DAE8;
     --mobile-scene-reveal:0%;
-    --mobile-scene-opacity:1;
+    --mobile-scene-opacity:0;
   }
   html,body{
     background:#C8DAE8 !important;
@@ -547,7 +547,8 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
       var reveal=116*phase(p,.64,1.38);
       var exit=phase((vh*1.40-flowBottom)/vh,0,1);
       root.style.setProperty('--mobile-scene-reveal',reveal.toFixed(2)+'%');
-      root.style.setProperty('--mobile-scene-opacity',(1-exit).toFixed(4));
+      var entry=phase(p,.64,.98);
+      root.style.setProperty('--mobile-scene-opacity',((1-exit)*entry).toFixed(4));
     }else{
       root.style.setProperty('--scene-enter-y',sceneY.toFixed(1)+'px');
     }
