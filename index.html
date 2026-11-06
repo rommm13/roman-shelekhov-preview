@@ -621,10 +621,13 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
 
 
 <style id="experience-editorial-polish">
-/* Anodized industrial plaques, all five identical.
-   Brushed aluminum is an actual local PNG asset, not a CSS-only approximation.
-   The initial WebGL scene and sticky-card scroll mechanics are untouched. */
-.experience-stack{z-index:2!important;padding-top:clamp(80px,8vw,112px);background:#C8DAE8;color:#243e4b}
+/* Blue-titanium industrial archive. Visually coordinated with the powder-blue,
+   white-3D architecture and sparse coral tracers of the original WebGL scene.
+   Same material and layout on all five cards. No hero/WebGL modifications. */
+.experience-stack{
+ position:relative;z-index:2!important;background:#C8DAE8!important;
+ color:#17374C;padding-top:clamp(80px,8vw,110px);
+}
 body.experience-loader-done #loader{display:none!important;visibility:hidden!important;pointer-events:none!important}
 .experience-stack__intro{
  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(255px,.64fr);
@@ -632,8 +635,12 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
  width:min(1240px,calc(100% - 96px));margin:0 auto clamp(80px,9vw,130px);
 }
 .experience-stack__intro-copy{min-width:0;max-width:810px}
-.experience-stack__intro h2{font-size:clamp(38px,4.8vw,75px);line-height:1.05;letter-spacing:-.053em;font-weight:700;max-width:790px}
+.experience-stack__intro h2{
+ font-size:clamp(38px,4.8vw,75px);line-height:1.05;letter-spacing:-.053em;
+ font-weight:650;max-width:790px;
+}
 .experience-stack__intro-copy>p:not(.experience-stack__overline){max-width:680px}
+.experience-stack__hint{display:none!important}
 .experience-stack__portrait{
  display:block;position:relative;width:100%!important;max-width:420px!important;
  height:auto!important;max-height:545px!important;object-fit:contain!important;
@@ -642,99 +649,142 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
 }
 .experience-card__face{
  position:relative;isolation:isolate;overflow:hidden;
- background-color:#ced5d9!important;
+ background-color:#bfd7e6!important;
  background-image:
-   linear-gradient(115deg,rgba(255,255,255,.28) 0%,transparent 23%,rgba(255,255,255,.05) 53%,rgba(56,70,78,.09) 100%),
-   url("/roman-shelekhov-preview/media/anodized-aluminum-satin.png")!important;
+  linear-gradient(112deg,rgba(255,255,255,.43) 0%,rgba(236,248,255,.13) 30%,rgba(34,88,123,.07) 70%,rgba(241,252,255,.18) 100%),
+  url("/roman-shelekhov-preview/media/blue-titanium-brushed.png")!important;
  background-size:100% 100%,640px 640px!important;
  background-repeat:no-repeat,repeat!important;
- border:1px solid rgba(81,98,108,.50)!important;
- border-radius:clamp(16px,1.8vw,23px)!important;
- box-shadow:inset 0 1px 0 rgba(255,255,255,.75),inset 0 -2px 0 rgba(69,82,92,.12),0 16px 37px rgba(30,56,71,.16),0 3px 9px rgba(40,70,88,.06)!important;
- color:#1e3541!important;
+ border:1px solid rgba(51,93,120,.42)!important;
+ border-radius:clamp(16px,1.7vw,23px)!important;
+ box-shadow:inset 0 1px 0 rgba(250,254,255,.77),inset 0 -1px 0 rgba(47,98,130,.19),
+  0 18px 40px rgba(31,68,92,.13),0 3px 10px rgba(37,75,95,.07)!important;
+ color:#193d53!important;
 }
-.experience-card__face::before,.experience-card__face::after{content:none!important;display:none!important}
+/* Tiny coral tracer, a direct nod to the first scene. Not a coloured card edge. */
+.experience-card__face::before{
+ content:"";position:absolute;z-index:3;pointer-events:none;
+ top:var(--exp-peek);right:0;width:32%;height:1px;
+ background:linear-gradient(90deg,transparent,rgba(234,118,124,.45) 65%,rgba(234,118,124,.8) 96%,transparent);
+ opacity:.75;
+}
+.experience-card__face::after{
+ content:"";position:absolute;z-index:3;pointer-events:none;right:clamp(22px,3vw,42px);
+ top:calc(var(--exp-peek) + 13px);width:4px;height:4px;
+ border:1px solid rgba(231,113,123,.66);
+ transform:rotate(45deg);background:rgba(246,133,139,.32);
+ box-shadow:0 0 0 4px rgba(237,111,119,.045);
+}
 .experience-card__tab{
- position:relative;flex:none;width:100%;height:var(--exp-peek);gap:3px;
- background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(53,68,78,.035))!important;
+ position:relative;flex:none;width:100%;height:var(--exp-peek);gap:4px;
+ background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(31,83,117,.025))!important;
  border:0!important;
  padding:10px clamp(49px,3.5vw,62px) 10px clamp(18px,2.6vw,36px);
- color:#3d505a!important;
+ color:#2a5066!important;
 }
 .experience-card__tab::after{
- content:"";position:absolute;display:block!important;bottom:0;left:clamp(16px,2.6vw,36px);right:clamp(16px,2.6vw,36px);height:5px;
- background:linear-gradient(180deg,rgba(255,255,255,.85) 0%,rgba(145,158,165,.68) 37%,rgba(85,100,109,.38) 55%,rgba(245,249,251,.65) 100%);
- box-shadow:0 1px 0 rgba(94,112,121,.25);
- border-radius:1px;pointer-events:none;
+ content:"";position:absolute;display:block!important;bottom:0;
+ left:clamp(16px,2.6vw,36px);right:clamp(16px,2.6vw,36px);
+ height:3px;border-radius:1px;
+ background:linear-gradient(180deg,rgba(252,255,255,.84),rgba(88,139,167,.27) 52%,rgba(244,251,254,.58));
+ box-shadow:0 1px 0 rgba(47,89,115,.24);pointer-events:none;
 }
-.experience-card__tab:hover,.experience-card__tab:focus-visible{background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,.07))!important}
+.experience-card__tab:hover,.experience-card__tab:focus-visible{
+ background:linear-gradient(180deg,rgba(255,255,255,.27),rgba(255,255,255,.02))!important
+}
 .experience-card__role,.experience-card__company{
- color:#475761!important;letter-spacing:-.02em;
- text-shadow:0 1px 0 rgba(255,255,255,.87),0 -1px 0 rgba(53,68,78,.2)!important;
+ color:#31566b!important;text-shadow:0 1px 0 rgba(250,255,255,.75),0 -1px 0 rgba(35,77,106,.1)!important;
+ letter-spacing:-.016em!important;
 }
-.experience-card__role{font-size:clamp(14px,1.23vw,18px)!important;line-height:1.15!important;font-weight:770!important}
-.experience-card__company{font-size:clamp(12px,.97vw,14px)!important;font-weight:580!important;line-height:1.17!important}
+.experience-card__role{
+ font-size:clamp(14px,1.23vw,18px)!important;line-height:1.15!important;
+ font-weight:720!important;
+}
+.experience-card__company{
+ font-size:clamp(12px,.97vw,14px)!important;
+ font-weight:530!important;line-height:1.18!important;opacity:.88;
+}
 .experience-card__tab-arrow{
- position:absolute;right:clamp(14px,2.5vw,34px);top:50%;transform:translateY(-50%);
- width:27px;height:27px;display:grid;place-items:center;color:#526c7a!important;
- background:rgba(238,244,246,.15)!important;border:1px solid rgba(65,87,98,.42)!important;
- border-radius:50%;box-shadow:inset 0 1px 0 rgba(255,255,255,.68);
+ position:absolute;right:clamp(14px,2.5vw,34px);top:50%;
+ transform:translateY(-50%);width:27px;height:27px;display:grid;place-items:center;
+ color:#3b6a85!important;background:rgba(232,248,255,.14)!important;
+ border:1px solid rgba(50,104,136,.43)!important;border-radius:50%;
+ box-shadow:inset 0 1px 0 rgba(250,254,255,.65);
 }
 .experience-card__tab-arrow svg{width:15px;height:15px}
 .experience-card__tab:hover .experience-card__tab-arrow{transform:translate(2px,-50%)}
 .experience-card__body{position:relative;min-height:0;display:block!important;flex:1}
 .experience-card__detail{
  position:relative;z-index:2;display:flex;flex-direction:column;
- width:min(69%,720px);min-width:0;overflow:visible;
- gap:clamp(9px,1.2vh,14px);
- padding:clamp(19px,2.7vw,40px) clamp(19px,3vw,43px);
+ width:min(70%,730px);min-width:0;overflow:visible;
+ gap:clamp(9px,1.15vh,14px);padding:clamp(19px,2.7vw,39px) clamp(19px,3vw,43px);
  background:transparent!important;
 }
 .experience-card__eyebrow{
- justify-content:flex-start;font-size:clamp(11px,.95vw,13px)!important;
- color:#435a66!important;letter-spacing:.13em;font-weight:700;
- text-shadow:none!important;
+ justify-content:flex-start;font:650 clamp(11px,.9vw,13px)/1.2 ui-monospace,SFMono-Regular,Consolas,monospace!important;
+ color:#426d87!important;letter-spacing:.14em!important;text-shadow:none!important;
 }
-.experience-card__heading{font-size:clamp(32px,3.25vw,49px)!important;font-weight:730!important;letter-spacing:-.052em!important;line-height:1.06!important;color:#1e3644!important;text-shadow:none!important}
-.experience-card__lead{font-size:clamp(13px,1.08vw,16px)!important;line-height:1.44!important;color:#304e5b!important;text-shadow:none!important}
+.experience-card__eyebrow::before{
+ content:"";align-self:center;width:17px;height:2px;margin-right:9px;
+ background:linear-gradient(90deg,#e9858c,rgba(233,133,140,.16));
+}
+.experience-card__heading{
+ margin:0;font-size:clamp(30px,3vw,45px)!important;
+ font-weight:640!important;letter-spacing:-.045em!important;line-height:1.07!important;
+ color:#123b55!important;text-shadow:none!important;
+}
+.experience-card__lead{
+ font-size:clamp(13px,1.08vw,16px)!important;line-height:1.43!important;
+ font-weight:450!important;color:#30586e!important;text-shadow:none!important;
+}
 .experience-card__outcome{
  position:relative;display:flex;align-items:baseline;flex-wrap:wrap;gap:7px 15px;
- border-top:1px solid rgba(66,84,96,.4)!important;
- padding-top:clamp(12px,1.5vh,19px);
- color:#203b49!important;text-shadow:none!important;
+ border-top:1px solid rgba(43,97,130,.34)!important;
+ padding-top:clamp(11px,1.4vh,18px);color:#1d4b65!important;text-shadow:none!important;
 }
-.experience-card__outcome strong{font-size:clamp(34px,4vw,59px)!important;font-weight:770!important;line-height:1!important;letter-spacing:-.06em!important;color:#203944!important}
-.experience-card__outcome span{font-size:clamp(11px,.96vw,14px)!important;color:#425a67!important;font-weight:550}
-.experience-card__description{font-size:clamp(12px,.98vw,14px)!important;line-height:1.45!important;color:#425a65!important;max-width:650px;text-shadow:none!important}
+.experience-card__outcome strong{
+ font-size:clamp(36px,4.2vw,61px)!important;font-weight:715!important;
+ line-height:.99!important;letter-spacing:-.065em!important;color:#123d59!important;
+}
+.experience-card__outcome span{
+ font-size:clamp(11px,.96vw,14px)!important;color:#456f85!important;font-weight:520;
+}
+.experience-card__description{
+ font-size:clamp(12px,.98vw,14px)!important;line-height:1.44!important;
+ color:#375c70!important;max-width:630px;text-shadow:none!important;
+}
+/* Existing company vector, etched below the paint rather than pasted as a badge. */
 .experience-card__visual{
- position:absolute!important;z-index:1;right:clamp(20px,4.5vw,75px)!important;top:50%!important;bottom:auto!important;
- transform:translateY(-50%);display:flex!important;align-items:center;justify-content:center;
- width:clamp(200px,27vw,380px)!important;height:clamp(200px,27vw,380px)!important;
- border:0!important;background:transparent!important;pointer-events:none;overflow:visible!important;
- box-shadow:none!important;opacity:1!important;mask-image:none!important;-webkit-mask-image:none!important;
+ position:absolute!important;z-index:1;right:clamp(22px,3.8vw,62px)!important;
+ bottom:clamp(7px,1.4vw,24px)!important;top:auto!important;left:auto!important;
+ transform:none!important;
+ display:flex!important;align-items:center;justify-content:center;
+ width:clamp(190px,24vw,325px)!important;height:clamp(190px,24vw,325px)!important;
+ border:0!important;background:transparent!important;pointer-events:none;
+ overflow:visible!important;opacity:1!important;
+ -webkit-mask-image:none!important;mask-image:none!important;
 }
 .experience-card__visual::before{
- content:"";display:block!important;position:absolute;inset:7%;z-index:0;border-radius:50%;
- border:2px solid rgba(58,73,82,.38);
- box-shadow:inset 1px 2px 1px rgba(255,255,255,.56),0 1px 0 rgba(255,255,255,.74),0 0 0 7px rgba(61,77,86,.085);
- transform:none!important;
+ content:"";position:absolute;inset:12%;z-index:0;
+ border:1px solid rgba(58,106,132,.14);border-radius:50%;transform:rotateX(58deg) rotate(-24deg);
+ box-shadow:0 0 0 27px rgba(240,253,255,.035);
 }
-.experience-card__visual::after{
- content:"";display:block!important;position:absolute;inset:14%;z-index:0;border-radius:50%;
- border:1px dashed rgba(60,75,82,.36);background:none!important;opacity:1!important;
- transform:none!important;
-}
+.experience-card__visual::after{content:none!important;display:none!important}
 .experience-card__visual img{
- position:relative;z-index:2;width:82%!important;height:82%!important;max-height:unset!important;object-fit:contain;
- opacity:.46!important;mix-blend-mode:multiply!important;
- filter:grayscale(1) brightness(.60) contrast(1.4) drop-shadow(1px 2px 0 rgba(255,255,255,.66))!important;
+ display:block!important;position:relative;z-index:2;
+ width:100%!important;height:100%!important;max-height:none!important;object-fit:contain;
+ opacity:.43!important;mix-blend-mode:multiply!important;
+ filter:grayscale(1) brightness(.76) contrast(1.32) drop-shadow(1px 2px 0 rgba(243,252,255,.56))!important;
  transform:none!important;transition:opacity .3s ease!important;
 }
-.experience-card__visual-index,.experience-card__orbit{display:none!important}
-.experience-card.is-current .experience-card__visual img{transform:none!important;opacity:.50!important}
-.experience-card[data-exp-index] .experience-card__face,
-.experience-card[data-exp-index="4"] .experience-card__face{color:#213843!important}
-.experience-card[data-exp-index="4"] .experience-card__tab{background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(53,68,78,.035))!important}
+.experience-card__orbit,.experience-card__visual-index{display:none!important}
+.experience-card.is-current .experience-card__visual img{transform:none!important;opacity:.47!important}
+/* All 5 cards are the identical alloy and ink, including the last. */
+.experience-card[data-exp-index] .experience-card__face{color:#193d53!important}
+.experience-card[data-exp-index="4"] .experience-card__face{background-color:#bfd7e6!important}
+.experience-card[data-exp-index="4"] .experience-card__tab{
+ background:linear-gradient(180deg,rgba(255,255,255,.11),rgba(31,83,117,.025))!important;
+}
 .experience-card[data-exp-index="4"] .experience-card__detail{background:transparent!important}
 .experience-card[data-exp-index="4"] .experience-card__role,
 .experience-card[data-exp-index="4"] .experience-card__company,
@@ -745,76 +795,115 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
 .experience-card[data-exp-index="4"] .experience-card__description,
 .experience-card[data-exp-index="4"] .experience-card__outcome span{color:inherit!important}
 .experience-card[data-exp-index="4"] .experience-card__role,
-.experience-card[data-exp-index="4"] .experience-card__company{color:#475761!important}
+.experience-card[data-exp-index="4"] .experience-card__company{color:#31566b!important}
+.experience-card[data-exp-index="4"] .experience-card__heading{color:#123b55!important}
+.experience-card[data-exp-index="4"] .experience-card__outcome strong{color:#123d59!important}
+.experience-card[data-exp-index="4"] .experience-card__eyebrow{color:#426d87!important}
+.experience-card[data-exp-index="4"] .experience-card__lead{color:#30586e!important}
+.experience-card[data-exp-index="4"] .experience-card__description{color:#375c70!important}
+.experience-card[data-exp-index="4"] .experience-card__outcome span{color:#456f85!important}
 .experience-card[data-exp-index="4"] .experience-card__visual{background:transparent!important;opacity:1!important}
-.experience-card[data-exp-index="4"] .experience-card__visual img{filter:grayscale(1) brightness(.60) contrast(1.4) drop-shadow(1px 2px 0 rgba(255,255,255,.66))!important}
-/* The meter belongs to the cards, with fine major/minor machining marks. */
-.experience-rail{color:#405b6d}
-.experience-rail__caption,.experience-rail__present{font-family:monospace;font-weight:700;letter-spacing:.14em;color:#516b7c}
+.experience-card[data-exp-index="4"] .experience-card__visual img{
+ filter:grayscale(1) brightness(.76) contrast(1.32) drop-shadow(1px 2px 0 rgba(243,252,255,.56))!important;
+}
+/* Precision date calibration aligned with the card stack, no trailing 'Н.В.'. */
+.experience-rail{
+ position:sticky!important;top:var(--exp-top)!important;
+ display:flex!important;flex-direction:column!important;align-items:stretch!important;
+ width:100%;height:calc(100svh - var(--exp-top) - 12px)!important;
+ min-height:340px;max-height:none!important;padding:0!important;gap:0!important;
+ color:#325b74;
+}
+.experience-rail__caption,.experience-rail__present{display:none!important}
 .experience-rail__track{
- position:relative;min-height:clamp(330px,59svh,530px);
+ position:relative;width:100%;min-height:0!important;
+ height:100%!important;flex:1!important;
+ display:flex;justify-content:space-between;align-items:center;
+ padding:0!important;
 }
 .experience-rail__track::before{
- content:"";position:absolute;top:16px;bottom:16px;left:50%;width:34px;height:auto;
- transform:translateX(-50%);
+ content:"";position:absolute;top:6px;bottom:6px;left:50%;
+ width:30px;height:auto;transform:translateX(-50%);
  background:
-   linear-gradient(90deg,transparent 47%,rgba(49,80,98,.50) 48%,rgba(49,80,98,.50) 52%,transparent 53%),
-   repeating-linear-gradient(to bottom,transparent 0,transparent 8px,rgba(50,78,96,.43) 8px,rgba(50,78,96,.43) 9px,transparent 9px,transparent 17px);
- opacity:1;
+ linear-gradient(90deg,transparent 48%,rgba(38,91,123,.53) 49%,rgba(38,91,123,.53) 51%,transparent 52%),
+ repeating-linear-gradient(to bottom,transparent 0 9px,rgba(58,107,139,.38) 9px 10px,transparent 10px 18px);
+ opacity:.9;
 }
 .experience-rail__track::after{
- content:"";position:absolute;top:18px;bottom:18px;left:50%;width:18px;transform:translateX(-50%);
- border-left:1px solid rgba(52,78,96,.20);border-right:1px solid rgba(52,78,96,.20);
+ content:"";position:absolute;top:6px;bottom:6px;left:50%;
+ width:26px;transform:translateX(-50%);
+ border-left:1px solid rgba(53,110,145,.11);border-right:1px solid rgba(53,110,145,.11);
  pointer-events:none;
 }
-.experience-rail__fill{background:#36596d;z-index:1;width:3px!important;opacity:.74;transition:height .3s ease}
-.experience-rail__point{position:relative;z-index:3;background:#C8DAE8!important;color:#617c8b!important;border-radius:0;padding:7px 3px}
+.experience-rail__fill{
+ z-index:1;left:50%;top:6px;background:linear-gradient(#7cacc5,#3c718f);
+ width:2px!important;opacity:.73;max-height:calc(100% - 12px)!important;
+}
+.experience-rail__point{
+ position:relative;z-index:3;background:#C8DAE8!important;
+ min-width:76px;color:#5e8398!important;padding:5px 3px!important;
+ border:1px solid transparent!important;gap:5px;
+}
 .experience-rail__point::before{
- content:"";position:absolute;top:50%;right:calc(100% + 2px);
- width:10px;height:1px;background:rgba(46,78,97,.6);transform:translateY(-50%);
- transition:width .24s ease;
+ content:"";position:absolute;top:50%;right:calc(100% + 1px);
+ height:1px;width:11px;background:#6492ad;transform:translateY(-50%);
 }
 .experience-rail__year{
- font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace!important;
- font-size:13px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums;
+ font-family:ui-monospace,SFMono-Regular,Consolas,monospace!important;
+ font-size:13px;font-weight:600;letter-spacing:-.035em;font-variant-numeric:tabular-nums;
 }
-.experience-rail__dash{width:13px;height:1px;background:#5c7888}
-.experience-rail__point.is-active .experience-rail__year{font-size:24px;color:#193e53;font-weight:800}
-.experience-rail__point.is-active .experience-rail__dash{width:31px;height:3px;background:#224e67}
-.experience-rail__point.is-active::before{width:23px;height:2px;background:#244e65}
-.experience-rail__point:hover .experience-rail__year{color:#193e53}
+.experience-rail__dash{width:12px;height:1px;background:#6c96ad}
+.experience-rail__point.is-active{
+ border-color:rgba(48,102,137,.18)!important;
+ background:rgba(228,243,251,.74)!important;border-radius:5px;
+}
+.experience-rail__point.is-active .experience-rail__year{
+ font-size:22px;font-weight:760;color:#183f58!important;
+}
+.experience-rail__point.is-active .experience-rail__dash{
+ width:29px;height:2px;background:#3c7290;
+}
+.experience-rail__point.is-active::before{width:23px;height:2px;background:#3c7290}
+.experience-rail__point:hover .experience-rail__year{color:#163d56}
 .experience-stack__runout{height:clamp(160px,28svh,300px)}
-/* Same cold divider color throughout the remaining light sections, no rogue bright-white lines. */
+/* Cold dividers and identical sky across the content below; no off-hue seam. */
+.education-compact,.standards,.faq{background-color:#C8DAE8!important}
 .faq,.faq-item{border-color:rgba(67,102,125,.28)!important}
 .faq_split_bar{background-color:rgba(67,102,125,.28)!important}
 @media(max-width:1100px){
  .experience-stack__intro{width:calc(100% - 50px);gap:25px;grid-template-columns:minmax(0,1.25fr) minmax(225px,.65fr)}
  .experience-stack__portrait{max-width:360px!important;max-height:480px!important}
- .experience-card__detail{width:min(71%,700px);padding:clamp(18px,2.6vw,28px);gap:clamp(7px,1.1vh,11px)}
- .experience-card__heading{font-size:clamp(28px,3vw,37px)!important}
+ .experience-card__detail{width:min(73%,700px);padding:clamp(18px,2.6vw,28px);gap:clamp(7px,1.1vh,11px)}
+ .experience-card__heading{font-size:clamp(27px,3vw,37px)!important}
  .experience-card__visual{right:15px!important;width:clamp(165px,26vw,290px)!important;height:clamp(165px,26vw,290px)!important}
 }
 @media(max-width:700px){
  .experience-stack{padding-top:clamp(100px,14vh,140px)}
- .experience-stack__intro{width:calc(100% - 36px);grid-template-columns:1fr;gap:22px;margin-bottom:clamp(60px,9vh,100px)}
+ .experience-stack__intro{
+ width:calc(100% - 36px);grid-template-columns:1fr;gap:22px;
+ margin-bottom:clamp(60px,9vh,100px);
+ }
  .experience-stack__intro h2{font-size:clamp(36px,8.5vw,51px);line-height:1.05}
  .experience-stack__portrait{
-  display:block;justify-self:center!important;width:min(100%,350px)!important;
-  max-width:350px!important;height:auto!important;max-height:480px!important;
-  object-fit:contain!important;border-radius:24px!important;
+ display:block;justify-self:center!important;
+ width:min(100%,350px)!important;max-width:350px!important;
+ height:auto!important;max-height:480px!important;
+ object-fit:contain!important;border-radius:24px!important;
  }
  .experience-card__face{border-radius:15px!important}
  .experience-card__tab{padding:7px 35px 7px 12px!important;gap:2px}
- .experience-card__tab::after{left:11px;right:11px;height:4px}
+ .experience-card__tab::after{left:11px;right:11px;height:3px}
  .experience-card__role{font-size:clamp(10.5px,2.8vw,13px)!important;line-height:1.13!important}
  .experience-card__company{font-size:clamp(9.8px,2.5vw,12px)!important;line-height:1.13!important}
  .experience-card__tab-arrow{width:21px;height:21px;right:7px}
  .experience-card__tab-arrow svg{width:13px;height:13px}
  .experience-card__body{display:block!important}
  .experience-card__detail{
-  width:100%!important;max-width:100%;position:relative;z-index:2;
-  gap:clamp(6px,1vh,10px);padding:clamp(12px,3.5vw,18px);
+ width:100%!important;max-width:100%;position:relative;z-index:2;
+ gap:clamp(6px,1vh,10px);padding:clamp(12px,3.5vw,18px);
  }
+ .experience-card__eyebrow{font-size:10px!important}
+ .experience-card__eyebrow::before{width:12px;height:1px;margin-right:6px}
  .experience-card__heading{font-size:clamp(24px,6.2vw,33px)!important}
  .experience-card__lead{font-size:clamp(11px,2.9vw,13px)!important;line-height:1.3!important}
  .experience-card__outcome{gap:4px 10px;padding-top:9px}
@@ -822,31 +911,37 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
  .experience-card__outcome span{font-size:10px!important}
  .experience-card__description{font-size:clamp(10.5px,2.6vw,12px)!important;line-height:1.36!important}
  .experience-card__visual{
-  top:auto!important;bottom:5px!important;right:10px!important;transform:none!important;
-  width:clamp(105px,34vw,148px)!important;height:clamp(105px,34vw,148px)!important;
-  opacity:.87!important;
+ top:auto!important;bottom:6px!important;right:7px!important;transform:none!important;
+ width:clamp(105px,34vw,150px)!important;height:clamp(105px,34vw,150px)!important;
+ opacity:.85!important;
  }
  .experience-card__visual img{opacity:.36!important}
- .experience-card.is-current .experience-card__visual img{opacity:.4!important}
- .experience-card__visual::before{border-width:1px}
- .experience-rail__track{min-height:min(56svh,425px)}
+ .experience-card.is-current .experience-card__visual img{opacity:.39!important}
+ .experience-card__visual::before{opacity:.65}
+ .experience-rail{min-height:0;height:calc(100svh - var(--exp-top) - 10px)!important}
  .experience-rail__track::before{width:18px}
- .experience-rail__track::after{width:9px}
+ .experience-rail__track::after{width:11px}
+ .experience-rail__point{min-width:40px;padding:4px 0!important}
  .experience-rail__year{font-size:10px!important}
- .experience-rail__point{padding:7px 1px}
  .experience-rail__point::before{width:5px;right:calc(100% + 1px)}
  .experience-rail__point.is-active .experience-rail__year{font-size:15px!important}
- .experience-rail__point.is-active::before{width:10px}
+ .experience-rail__point.is-active::before{width:11px}
  .experience-rail__dash{width:8px}
- .experience-rail__point.is-active .experience-rail__dash{width:22px;height:2px}
+ .experience-rail__point.is-active .experience-rail__dash{width:22px}
 }
 @media(max-width:360px){
  .experience-card__role{font-size:10px!important}
  .experience-card__heading{font-size:24px!important}
  .experience-card__lead,.experience-card__description{font-size:10.5px!important}
- .experience-card__visual{width:106px!important;height:106px!important;opacity:.64!important}
+ .experience-card__visual{width:107px!important;height:107px!important;opacity:.63!important}
 }
-@media(prefers-reduced-motion:reduce){.experience-card__visual img{transition:none!important}}
+@media(max-height:650px){
+ .experience-card__detail{gap:5px}
+ .experience-card__description{line-height:1.29!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .experience-card__visual img{transition:none!important}
+}
 </style>
 </head><body id="top" style="background-color: #D0E1EB;" data-astro-cid-5hce7sga><div class="transition-pages"></div><div class="mobile-nav__overlay"></div><header><nav class="header__nav-left"><a href="#flow">Подход</a><a href="#features">Опыт</a><a href="#faq">Принципы</a><a href="#contact">Контакты</a></nav><nav class="header__nav-right"><div class="header__ctas"><a href="mailto:i@shelekhov-rd.ru" class="pill-btn pill-btn--dark"><span class="pill-btn-span">Связаться</span></a></div><button class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false"><span class="menu-btn__icon"><span class="menu-btn__line menu-btn__line--1"></span><span class="menu-btn__line menu-btn__line--2"></span><span class="menu-btn__line menu-btn__line--3"></span></span></button></nav><nav class="mobile-nav" aria-label="Mobile navigation"><div class="mobile-nav__panel-bg"></div><div class="mobile-nav__panel"><div class="mobile-nav__header"><a href="#top" class="mobile-nav__logo"><span style="font-weight:600;letter-spacing:0.02em;font-size:1rem;color:inherit;white-space:nowrap">Роман Шелехов</span></a><button class="mobile-nav__close" type="button" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><rect y="14.1421" width="20" height="2" transform="rotate(-45 0 14.1421)" fill="#050419"></rect><rect x="1.41406" y="0.000610352" width="20" height="2" transform="rotate(45 1.41406 0.000610352)" fill="#050419"></rect></svg></button></div><ul class="mobile-nav__list"><li class="mobile-nav__item"><a href="#flow">Подход</a></li><li class="mobile-nav__item"><a href="#features">Опыт</a></li><li class="mobile-nav__item"><a href="#faq">Принципы</a></li><li class="mobile-nav__item"><a href="#contact">Контакты</a></li></ul><div class="mobile-nav__ctas"><div class="mncta"><a href="mailto:i@shelekhov-rd.ru" class="pill-btn pill-btn--dark mobile-nav__cta"><span class="pill-btn-span">Связаться</span></a></div></div></div></nav></header><main data-taxi><div data-taxi-view="home"><div class="top"><section class="hero"><div class="hero__content"><h1 class="hero__title" style="opacity:0;transform:perspective(1000px) translateX(50%) translate3d(-222.2px, 88px, 0) rotateY(60deg) rotateX(35deg);"><span>Роман Шелехов</span></h1><p class="hero__subtitle" style="opacity:0;transform:perspective(1000px) translateX(50%) translate3d(-222.2px, 88px, 0) rotateY(60deg) rotateX(35deg);"><span>Финансовый директор, к.э.н.<br/></span><span>Более 20 лет управляю финансами и экономикой предприятий, соединяя точный расчёт с пониманием реального производства.</span></p><div class="hero__cta flx" aria-hidden="true" hidden></div></div><img src="/roman-shelekhov-preview/media/roman-profile.webp" alt="Роман Шелехов" class="hero__person" loading="eager" decoding="async" fetchpriority="high"><div class="hero__scroll-btn"><span><span class="hsbtn-in" style="transform:translate3d(0, calc(100% + 7px), 0);">прокрутите, чтобы узнать подробнее</span></span></div></section><div class="hero-spacer"></div><section class="flow" id="flow"><div class="flow__wrapper"><div class="flow__steps"><div class="flow__step" data-step="1"><div class="flow__header"><div class="flow__number"><span>01</span></div><h3 class="flow__title">Инженерная основа</h3></div><div class="flow__body"><div class="flow__body-inner"><div class="flow__track"><div class="flow__track-bar"><div class="flow__track-fill"></div></div></div><p class="flow__description">Работа с проектно-сметной документацией и инвестиционными программами научила меня оценивать не только расчётную стоимость проекта, но и реальные условия его выполнения. Этот опыт до сих пор помогает предметно обсуждать капитальные вложения с техническими подразделениями.</p></div></div></div><div class="flow__step" data-step="2"><div class="flow__header"><div class="flow__number"><span>02</span></div><h3 class="flow__title">Экономика предприятия</h3></div><div class="flow__body"><div class="flow__body-inner"><div class="flow__track"><div class="flow__track-bar"><div class="flow__track-fill"></div></div></div><p class="flow__description">В энергетике и коммунальной инфраструктуре финансовая модель не существует отдельно от производственных процессов, тарифного регулирования и состояния активов. Выстраивая бюджетирование и управленческий учёт, я стремился соединять экономические показатели с фактической работой подразделений.</p></div></div></div><div class="flow__step" data-step="3"><div class="flow__header"><div class="flow__number"><span>03</span></div><h3 class="flow__title">Финансирование и ликвидность</h3></div><div class="flow__body"><div class="flow__body-inner"><div class="flow__track"><div class="flow__track-bar"><div class="flow__track-fill"></div></div></div><p class="flow__description">Управление обязательствами требует учитывать не только доступный объём кредитных ресурсов, но и сроки поступлений, стоимость заёмных средств, инвестиционные потребности и график платежей. Свою задачу вижу в том, чтобы финансирование поддерживало деятельность предприятия, а не создавало дополнительные ограничения.</p></div></div></div><div class="flow__step" data-step="4"><div class="flow__header"><div class="flow__number"><span>04</span></div><h3 class="flow__title">Технологии в управлении</h3></div><div class="flow__body"><div class="flow__body-inner"><div class="flow__track"><div class="flow__track-bar"><div class="flow__track-fill"></div></div></div><p class="flow__description">Опыт внедрения ERP и автоматизации отчётности показал, насколько качество управленческих решений зависит от данных и организации процессов. Сейчас, работая в IT-холдинге, я продолжаю развивать этот подход, включая практическое использование инструментов анализа и искусственного интеллекта.</p></div></div></div></div></div></section><section class="experience-stack" id="features" aria-labelledby="experience-heading">
   <div class="experience-stack__intro">
@@ -854,7 +949,7 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
       <p class="experience-stack__overline">ПРОФЕССИОНАЛЬНЫЙ ПУТЬ / 2004 — НАСТОЯЩЕЕ ВРЕМЯ</p>
       <h2 id="experience-heading">Опыт, который складывался последовательно</h2>
       <p>За время работы менялись предприятия, задачи и масштаб ответственности. Инженерная основа постепенно дополнялась экономикой, финансированием и управлением денежными потоками.</p>
-      <span class="experience-stack__hint">Листай вниз, чтобы пройти пять этапов <span aria-hidden="true">↓</span></span>
+      
     </div>
     <img class="experience-stack__portrait" src="/roman-shelekhov-preview/media/roman-feature-mshev.webp" alt="Роман Шелехов на фоне воды" loading="lazy" decoding="async" width="1088" height="1445">
   </div>
@@ -985,7 +1080,7 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
         <button class="experience-rail__point" type="button" data-exp-go="2" aria-label="Опыт с 2022 года: Раменская теплосеть"><span class="experience-rail__year">2022</span><span class="experience-rail__dash" aria-hidden="true"></span></button>
         <button class="experience-rail__point" type="button" data-exp-go="3" aria-label="Опыт с 2024 года: Межрайонный Щёлковский водоканал"><span class="experience-rail__year">2024</span><span class="experience-rail__dash" aria-hidden="true"></span></button>
         <button class="experience-rail__point" type="button" data-exp-go="4" aria-label="Опыт с 2025 года: IT-холдинг"><span class="experience-rail__year">2025</span><span class="experience-rail__dash" aria-hidden="true"></span></button></div>
-      <p class="experience-rail__present">Н. В.</p>
+      
     </aside>
   </div>
 </section><section class="education-compact" style="padding:3rem 1.5rem;max-width:1200px;margin:0 auto;display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap"><div style="flex:1 1 320px"><h2 style="margin:0 0 1rem;font:inherit;font-size:1.5rem;font-weight:600">Образование</h2><p style="margin:0;line-height:1.6">Я окончил Московский энергетический институт по специальности «Экономика и управление на предприятии» и Владимирский государственный университет по направлению «Промышленное и гражданское строительство». В 2008 году защитил кандидатскую диссертацию по экономическим наукам. Продолжаю профессиональное обучение, включая программы финансового моделирования, прогнозирования и стратегического управления.</p></div></section><section class="standards"><div class="standards__container"><div class="standards__content"><h2 class="standards__title"><span>Когда финансирование </span><span>становится частью </span><span>управленческого решения</span></h2><p class="standards__description">На энергетическом предприятии потребности инвестиционной программы приходится согласовывать с текущими расходами, обязательствами перед контрагентами и доступными источниками финансирования. Ошибка в графике платежей способна обойтись дороже, чем невыгодная ставка по отдельному кредиту.<br><br>В Раменской теплосети мы последовательно работали над привлечением капитала и условиями обслуживания долга. В результате удалось привлечь более 600 млн рублей и сократить процентные расходы более чем на 10 млн рублей ежегодно. Для меня ценность этого результата заключается в сочетании двух задач: получить необходимые предприятию средства и сохранить управляемость его денежных потоков.</p></div></div></section><section class="faq" id="faq"><div class="faq__container"><div class="faq__left"><h2 class="faq__title">Что для меня важно в работе</h2></div><div class="faq_split_bar"></div><div class="faq__right"><div class="faq-item faq-item--open"><button class="faq-item__header" type="button" aria-expanded="true"><span class="faq-item__question">Почему я уделяю столько внимания исходным данным?</span><span class="faq-item__icon"><img src="/roman-shelekhov-preview/icons/chevron-down.svg" alt="" loading="lazy" decoding="async"></span></button><div class="faq-item__content"><p class="faq-item__answer">Финансовая отчётность полезна руководителю только в том случае, если её показатели можно связать с конкретными операциями, обязательствами и результатами подразделений. Поэтому при организации бюджетирования и управленческого учёта я начинаю с методологии, источников информации и ответственности за её достоверность.</p></div></div><div class="faq-item "><button class="faq-item__header" type="button" aria-expanded="false"><span class="faq-item__question">Как я оцениваю устойчивость финансов предприятия?</span><span class="faq-item__icon"><img src="/roman-shelekhov-preview/icons/chevron-down.svg" alt="" loading="lazy" decoding="async"></span></button><div class="faq-item__content"><p class="faq-item__answer">Прибыльность и наличие денежных средств в нужный момент не всегда совпадают. Для оценки ликвидности необходимо видеть сроки поступлений и платежей, состояние дебиторской задолженности, финансовые ограничения и потребности инвестиционной программы. Такой подход позволяет заранее обсуждать варианты действий вместо срочного поиска денег после возникновения кассового разрыва.</p></div></div><div class="faq-item "><button class="faq-item__header" type="button" aria-expanded="false"><span class="faq-item__question">Зачем финансовому директору разбираться в производстве?</span><span class="faq-item__icon"><img src="/roman-shelekhov-preview/icons/chevron-down.svg" alt="" loading="lazy" decoding="async"></span></button><div class="faq-item__content"><p class="faq-item__answer">Затраты и инвестиции возникают вследствие конкретных технических и организационных решений. Без понимания этих обстоятельств финансовая функция рискует превратиться в формальное согласование лимитов. Мне важно обсуждать с руководителями подразделений экономические последствия решений на понятном им профессиональном языке.</p></div></div><div class="faq-item "><button class="faq-item__header" type="button" aria-expanded="false"><span class="faq-item__question">Как я отношусь к автоматизации и ИИ?</span><span class="faq-item__icon"><img src="/roman-shelekhov-preview/icons/chevron-down.svg" alt="" loading="lazy" decoding="async"></span></button><div class="faq-item__content"><p class="faq-item__answer">Начинать следует с понимания процесса и качества информации, которую предстоит обрабатывать. Технология способна ускорить расчёты, подготовку отчётности и анализ, однако не исправит противоречивые правила учёта и не заменит ответственность руководителя. Я применяю новые инструменты там, где их польза подтверждается конкретным результатом работы.</p></div></div></div></div></section><section class="cta-section" id="contact"><h2 class="cta-section__title"><span>Для профессионального общения</span></h2><p style="max-width:720px;margin:1rem auto 1.5rem;line-height:1.6;opacity:.9">Мой опыт наиболее полезен в компаниях, где финансовому руководителю необходимо глубоко разбираться в операционной деятельности, обеспечивать устойчивость расчётов и участвовать в инвестиционных и организационных решениях. Открыт к предметному обсуждению управленческих задач и профессионального сотрудничества.</p><div class="contact-icons"><a href="mailto:i@shelekhov-rd.ru" class="contact-icon" aria-label="Написать письмо: i@shelekhov-rd.ru"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-10 6L2 7"></path></svg></a><a href="https://www.linkedin.com/in/shelekhovroman" target="_blank" rel="noopener" class="contact-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg></a><a href="https://t.me/romanshelekhov" target="_blank" rel="noopener" class="contact-icon" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"></path></svg></a><a href="tel:+79252228735" class="contact-icon" aria-label="Позвонить: +7 925 222-87-35"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></a></div></section></div><div id="app"></div></div></main><script type="module" src="/roman-shelekhov-preview/_astro/CommonScripts.astro_astro_type_script_index_0_lang.Cp1n2Suu.js"></script><footer class="footer"><div class="footer__bottom"><span style="font-weight:600;letter-spacing:0.02em;color:#050419">Роман Шелехов</span><div class="footer__meta"><p class="footer__copyright">© 2026 Роман Шелехов</p></div></div></footer><div id="loader" class="flx-center"><svg class="loader__ellipse loader__ellipse--outer" viewBox="0 0 1500 800"><defs><mask id="mask-outer"><path d="M 750 1 A 749 399 0 0 1 750 799 A 749 399 0 0 1 750 1" fill="none" stroke="white" stroke-width="4" pathLength="3700" class="loader__draw loader__draw--outer"></path></mask></defs><ellipse cx="750" cy="400" rx="749" ry="399" mask="url(#mask-outer)"></ellipse></svg><svg class="loader__ellipse loader__ellipse--inner" viewBox="0 0 800 800"><defs><mask id="mask-inner"><path d="M 400 1 A 399 399 0 0 1 400 799 A 399 399 0 0 1 400 1" fill="none" stroke="white" stroke-width="4" pathLength="2520" class="loader__draw loader__draw--inner"></path></mask></defs><ellipse cx="400" cy="400" rx="399" ry="399" mask="url(#mask-inner)"></ellipse></svg></div><script>
