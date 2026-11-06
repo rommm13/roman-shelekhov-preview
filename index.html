@@ -260,6 +260,17 @@ html .cta-section,html .footer{background-color:var(--site-sky) !important}
   }
   .cta-section{padding-top:clamp(70px,9svh,115px) !important}
 }
+
+/* Remove the fixed-header color seam while WebGL fills the mobile screen. */
+body.scene-stage-active header:not(.menu-open),
+body.scene-stage-active header.is-scrolled:not(.menu-open){
+  background:transparent !important;
+  background-color:transparent !important;
+  -webkit-backdrop-filter:none !important;
+  backdrop-filter:none !important;
+  box-shadow:none !important;
+}
+/* White sections and contacts keep their normal header after the 3D sequence. */
 </style>
 <style id="site-fixes">
 .cta-section{background-color:#D0E1EB !important;border-bottom:1px solid rgba(5,4,25,.12) !important}
@@ -351,8 +362,11 @@ html .cta-section,html .footer{background-color:var(--site-sky) !important}
     var copy=1-phase(p,.11,.64);
     var hint=1-phase(p,.22,.68);
     var wash=1-phase(p,.075,.77);
-    var sceneRise=phase(p,.06,.98);
+    var sceneRise=phase(p,.06,.84);
     var sceneY=vh*.92*(1-sceneRise);
+    var flow=document.querySelector('.flow');
+    var flowEnd=flow?(flow.getBoundingClientRect().bottom+y):(vh*6);
+    document.body.classList.toggle('scene-stage-active',y<flowEnd-vh*.12);
     hero.style.setProperty('--hero-photo-opacity',photo.toFixed(4));
     hero.style.setProperty('--hero-copy-opacity',copy.toFixed(4));
     hero.style.setProperty('--hero-hint-opacity',hint.toFixed(4));
