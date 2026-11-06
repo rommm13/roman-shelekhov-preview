@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 540" role="img" aria-label="IT-холдинг, стрелка цифровых решений, объёмная эмблема">
 <title>IT-холдинг, стрелка цифровых решений, объёмная эмблема</title>
 <defs>
-<linearGradient id="ivory" x1="0" y1="0" x2=".7" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#ffffff"/><stop offset=".37" stop-color="#fcfdff"/><stop offset=".74" stop-color="#e9efff"/><stop offset="1" stop-color="#cbd9f5"/></linearGradient>
-<linearGradient id="rim" x1="0" y1="0" x2=".1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".42" stop-color="#f9fbff"/><stop offset=".8" stop-color="#e1eafa"/><stop offset="1" stop-color="#bccdf0"/></linearGradient>
-<filter id="lift" x="-28%" y="-28%" width="160%" height="170%" color-interpolation-filters="sRGB"><feDropShadow dx="3" dy="10" stdDeviation="9" flood-color="#486da6" flood-opacity=".40"/><feDropShadow dx="-2.5" dy="-3" stdDeviation="2.5" flood-color="#ffffff" flood-opacity=".77"/></filter>
-<filter id="soft" x="-25%" y="-25%" width="155%" height="160%" color-interpolation-filters="sRGB"><feDropShadow dx="2" dy="5" stdDeviation="4.5" flood-color="#6487bc" flood-opacity=".40"/></filter>
+<linearGradient id="ivory" x1="0" y1="0" x2=".7" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#F8FCFF"/><stop offset=".37" stop-color="#E8F3FA"/><stop offset=".74" stop-color="#D6E7F2"/><stop offset="1" stop-color="#B5CDDE"/></linearGradient>
+<linearGradient id="rim" x1="0" y1="0" x2=".1" y2="1"><stop offset="0" stop-color="#F6FCFF"/><stop offset=".42" stop-color="#E8F2F9"/><stop offset=".8" stop-color="#D1E2EE"/><stop offset="1" stop-color="#A9C4D7"/></linearGradient>
+<filter id="lift" x="-28%" y="-28%" width="160%" height="170%" color-interpolation-filters="sRGB"><feDropShadow dx="3" dy="10" stdDeviation="9" flood-color="#6389AA" flood-opacity=".39"/><feDropShadow dx="-2.5" dy="-3" stdDeviation="2.5" flood-color="#ffffff" flood-opacity=".77"/></filter>
+<filter id="soft" x="-25%" y="-25%" width="155%" height="160%" color-interpolation-filters="sRGB"><feDropShadow dx="2" dy="5" stdDeviation="4.5" flood-color="#759BBC" flood-opacity=".38"/></filter>
 </defs>
 
 <path d="M92 248 Q82 248 82 261 L82 310 Q82 325 96 325 H289 L228 385 Q215 399 230 412 L285 464 Q297 474 308 460 L476 291 Q490 276 476 262 L308 92 Q297 79 285 90 L230 144 Q217 157 230 170 L289 231 H96 Q92 231 92 248 Z"
