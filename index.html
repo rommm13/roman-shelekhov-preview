@@ -619,257 +619,234 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
 </style>
 
 
+
 <style id="experience-editorial-polish">
-/* Cinema-folio experience. Five sticky cards and right timeline retain original mechanics.
-   Portrait retains every source pixel using contain; a soft image-backed backdrop fills the frame.
-   WebGL hero and hero-scroll-stage are not modified. */
-.experience-stack{
-  position:relative;z-index:2!important;
-  padding-top:clamp(94px,10vw,148px);
-  --exp-ink:#14344a;--exp-signal:#fa756a;
-}
+/* Anodized industrial plaques, all five identical.
+   Brushed aluminum is an actual local PNG asset, not a CSS-only approximation.
+   The initial WebGL scene and sticky-card scroll mechanics are untouched. */
+.experience-stack{z-index:2!important;padding-top:clamp(80px,8vw,112px);background:#C8DAE8;color:#243e4b}
 body.experience-loader-done #loader{display:none!important;visibility:hidden!important;pointer-events:none!important}
 .experience-stack__intro{
- display:block;width:min(1220px,calc(100% - 100px));margin:0 auto;
+ display:grid;grid-template-columns:minmax(0,1.25fr) minmax(255px,.64fr);
+ gap:clamp(30px,5.2vw,86px);align-items:center;
+ width:min(1240px,calc(100% - 96px));margin:0 auto clamp(80px,9vw,130px);
 }
-.experience-stack__intro-copy{max-width:1030px}
-.experience-stack__intro h2{
- font-size:clamp(43px,5.6vw,88px);line-height:1.02;max-width:970px;letter-spacing:-.064em;font-weight:700;
+.experience-stack__intro-copy{min-width:0;max-width:810px}
+.experience-stack__intro h2{font-size:clamp(38px,4.8vw,75px);line-height:1.05;letter-spacing:-.053em;font-weight:700;max-width:790px}
+.experience-stack__intro-copy>p:not(.experience-stack__overline){max-width:680px}
+.experience-stack__portrait{
+ display:block;position:relative;width:100%!important;max-width:420px!important;
+ height:auto!important;max-height:545px!important;object-fit:contain!important;
+ border-radius:24px!important;box-shadow:0 21px 54px rgba(32,67,87,.16)!important;
+ border:1px solid rgba(75,103,120,.22);justify-self:end;
 }
-.experience-stack__intro-copy>p:not(.experience-stack__overline){max-width:660px}
-.experience-stack__photo-stage{
- position:relative;isolation:isolate;width:100%;height:100svh;min-height:540px;overflow:hidden;
- margin:clamp(70px,8vw,135px) 0 clamp(68px,9vw,140px);
- background:#9fbacf;
-}
-.experience-stack__photo-stage::before{
- content:"";position:absolute;inset:-7%;z-index:0;
- background:url("/roman-shelekhov-preview/media/roman-feature-mshev.webp") center center/cover no-repeat;
- filter:blur(30px) saturate(.72) brightness(.96);transform:scale(1.08);pointer-events:none;
-}
-.experience-stack__photo-stage::after{
- content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
- background:linear-gradient(180deg,rgba(10,44,70,.11),transparent 25%,transparent 67%,rgba(17,46,65,.26) 100%);
-}
-.experience-stack__photo-stage .experience-stack__portrait{
- display:block;position:relative;z-index:1;inset:auto;
- width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;min-width:0!important;
- object-fit:contain!important;object-position:center center!important;
- box-shadow:none!important;border-radius:0!important;border:none!important;filter:none;
-}
-.experience-stack__photo-label{
- position:absolute;z-index:3;left:clamp(19px,5vw,76px);right:clamp(19px,5vw,76px);
- bottom:clamp(24px,5vh,56px);display:flex;justify-content:space-between;align-items:flex-end;
- gap:12px;color:#fff;font-size:clamp(10px,1vw,13px);font-weight:700;letter-spacing:.16em;
- text-shadow:0 2px 14px rgba(8,28,44,.7);
-}
-.experience-stack__photo-label span:first-child{max-width:190px}
-.experience-stack__layout{padding-top:0}
-.experience-card{isolation:isolate}
 .experience-card__face{
  position:relative;isolation:isolate;overflow:hidden;
- background:var(--exp-surface);
- border:1px solid rgba(45,94,122,.34);
- border-radius:clamp(18px,1.85vw,25px);
- box-shadow:0 30px 65px rgba(23,55,73,.16),0 5px 12px rgba(26,61,84,.08);
+ background-color:#ced5d9!important;
+ background-image:
+   linear-gradient(115deg,rgba(255,255,255,.28) 0%,transparent 23%,rgba(255,255,255,.05) 53%,rgba(56,70,78,.09) 100%),
+   url("/roman-shelekhov-preview/media/anodized-aluminum-brushed.png")!important;
+ background-size:100% 100%,640px 640px!important;
+ background-repeat:no-repeat,repeat!important;
+ border:1px solid rgba(81,98,108,.50)!important;
+ border-radius:clamp(16px,1.8vw,23px)!important;
+ box-shadow:inset 0 1px 0 rgba(255,255,255,.75),inset 0 -2px 0 rgba(69,82,92,.12),0 16px 37px rgba(30,56,71,.16),0 3px 9px rgba(40,70,88,.06)!important;
+ color:#1e3541!important;
 }
-.experience-card__face::before{
- content:"";position:absolute;top:0;bottom:0;left:0;width:5px;z-index:5;
- background:linear-gradient(180deg,var(--exp-signal),rgba(250,117,106,.1) 85%);
- pointer-events:none;
-}
-.experience-card__face::after{
- content:"";position:absolute;top:0;right:0;width:100px;height:100px;pointer-events:none;z-index:4;
- background:linear-gradient(45deg,transparent 49.4%,rgba(35,95,131,.22) 50%,transparent 50.6%);
- opacity:.45;transform:translate(49px,-49px) rotate(0deg);
-}
+.experience-card__face::before,.experience-card__face::after{content:none!important;display:none!important}
 .experience-card__tab{
- position:relative;flex:0 0 var(--exp-peek);height:var(--exp-peek);
- gap:5px;padding:10px clamp(56px,3.6vw,54px) 10px clamp(22px,3.3vw,45px);
- background:rgba(244,250,253,.88);
- border:0;border-bottom:1px solid rgba(42,95,124,.22);
+ position:relative;flex:none;width:100%;height:var(--exp-peek);gap:3px;
+ background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(53,68,78,.035))!important;
+ border:0!important;
+ padding:10px clamp(49px,3.5vw,62px) 10px clamp(18px,2.6vw,36px);
+ color:#3d505a!important;
 }
-.experience-card__tab:hover,.experience-card__tab:focus-visible{background:#fff}
-.experience-card__role{color:#14344a;font-size:clamp(15px,1.26vw,18px);font-weight:760;letter-spacing:-.022em;line-height:1.11}
-.experience-card__company{color:#587588;font-size:clamp(12px,.98vw,14px);line-height:1.13;font-weight:520;letter-spacing:.012em}
+.experience-card__tab::after{
+ content:"";position:absolute;display:block!important;bottom:0;left:clamp(16px,2.6vw,36px);right:clamp(16px,2.6vw,36px);height:5px;
+ background:linear-gradient(180deg,rgba(255,255,255,.85) 0%,rgba(145,158,165,.68) 37%,rgba(85,100,109,.38) 55%,rgba(245,249,251,.65) 100%);
+ box-shadow:0 1px 0 rgba(94,112,121,.25);
+ border-radius:1px;pointer-events:none;
+}
+.experience-card__tab:hover,.experience-card__tab:focus-visible{background:linear-gradient(180deg,rgba(255,255,255,.3),rgba(255,255,255,.07))!important}
+.experience-card__role,.experience-card__company{
+ color:#475761!important;letter-spacing:-.02em;
+ text-shadow:0 1px 0 rgba(255,255,255,.87),0 -1px 0 rgba(53,68,78,.2)!important;
+}
+.experience-card__role{font-size:clamp(14px,1.23vw,18px)!important;line-height:1.15!important;font-weight:770!important}
+.experience-card__company{font-size:clamp(12px,.97vw,14px)!important;font-weight:580!important;line-height:1.17!important}
 .experience-card__tab-arrow{
- width:30px;height:30px;right:clamp(15px,2.3vw,34px);top:50%;transform:translateY(-50%);
- display:flex;align-items:center;justify-content:center;border:1px solid rgba(34,87,120,.24);
- border-radius:50%;background:transparent;color:#406983;transition:transform .3s,color .3s,background .3s;
+ position:absolute;right:clamp(14px,2.5vw,34px);top:50%;transform:translateY(-50%);
+ width:27px;height:27px;display:grid;place-items:center;color:#526c7a!important;
+ background:rgba(238,244,246,.15)!important;border:1px solid rgba(65,87,98,.42)!important;
+ border-radius:50%;box-shadow:inset 0 1px 0 rgba(255,255,255,.68);
 }
-.experience-card__tab-arrow svg{width:17px;height:17px}
-.experience-card__tab:hover .experience-card__tab-arrow{transform:translate(3px,-50%);background:#dcebf4;color:#10314a}
-.experience-card__body{
- display:grid;grid-template-columns:minmax(0,1.13fr) minmax(255px,.87fr);gap:0;min-height:0;
-}
+.experience-card__tab-arrow svg{width:15px;height:15px}
+.experience-card__tab:hover .experience-card__tab-arrow{transform:translate(2px,-50%)}
+.experience-card__body{position:relative;min-height:0;display:block!important;flex:1}
 .experience-card__detail{
  position:relative;z-index:2;display:flex;flex-direction:column;
- gap:clamp(8px,1.2vh,15px);min-width:0;
- padding:clamp(18px,2.6vw,38px) clamp(22px,3vw,45px);
- background:linear-gradient(130deg,rgba(255,255,255,.7),rgba(240,248,252,.13));
+ width:min(69%,720px);min-width:0;overflow:visible;
+ gap:clamp(9px,1.2vh,14px);
+ padding:clamp(19px,2.7vw,40px) clamp(19px,3vw,43px);
+ background:transparent!important;
 }
 .experience-card__eyebrow{
- color:#527991;text-transform:uppercase;letter-spacing:.15em;font-size:clamp(11px,.86vw,13px);font-weight:760;
+ justify-content:flex-start;font-size:clamp(11px,.95vw,13px)!important;
+ color:#435a66!important;letter-spacing:.13em;font-weight:700;
+ text-shadow:none!important;
 }
-.experience-card__heading{
- margin:0;font-size:clamp(33px,3.6vw,58px);font-weight:760;letter-spacing:-.065em;line-height:1.01;color:#10344b;
- max-width:690px;
-}
-.experience-card__lead{font-size:clamp(13px,1.08vw,16px);line-height:1.43;color:#3c6179;max-width:650px}
+.experience-card__heading{font-size:clamp(32px,3.25vw,49px)!important;font-weight:730!important;letter-spacing:-.052em!important;line-height:1.06!important;color:#1e3644!important;text-shadow:none!important}
+.experience-card__lead{font-size:clamp(13px,1.08vw,16px)!important;line-height:1.44!important;color:#304e5b!important;text-shadow:none!important}
 .experience-card__outcome{
- position:relative;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;
- border-top:1px solid rgba(53,104,135,.26);padding-top:clamp(9px,1.55vh,18px);margin-top:1px;
+ position:relative;display:flex;align-items:baseline;flex-wrap:wrap;gap:7px 15px;
+ border-top:1px solid rgba(66,84,96,.4)!important;
+ padding-top:clamp(12px,1.5vh,19px);
+ color:#203b49!important;text-shadow:none!important;
 }
-.experience-card__outcome strong{
- font-size:clamp(44px,4.6vw,75px);font-weight:780;letter-spacing:-.075em;line-height:.93;
- color:#123b54;
-}
-.experience-card__outcome span{font-size:clamp(12px,.93vw,14px);font-weight:550;line-height:1.27;color:#4b7187;max-width:220px}
-.experience-card__description{
- max-width:625px;color:#4c6b7c;font-size:clamp(12px,.93vw,14px);line-height:1.43;
-}
+.experience-card__outcome strong{font-size:clamp(34px,4vw,59px)!important;font-weight:770!important;line-height:1!important;letter-spacing:-.06em!important;color:#203944!important}
+.experience-card__outcome span{font-size:clamp(11px,.96vw,14px)!important;color:#425a67!important;font-weight:550}
+.experience-card__description{font-size:clamp(12px,.98vw,14px)!important;line-height:1.45!important;color:#425a65!important;max-width:650px;text-shadow:none!important}
 .experience-card__visual{
- position:relative;overflow:hidden;isolation:isolate;display:flex;align-items:center;justify-content:center;
- border-left:1px solid rgba(55,100,129,.11);
- background-color:#C2D9E7;
- background-image:
-   linear-gradient(rgba(35,93,129,.11) 1px,transparent 1px),
-   linear-gradient(90deg,rgba(35,93,129,.11) 1px,transparent 1px),
-   radial-gradient(ellipse at 50% 38%,#ecf7fc 0%,#b6d1e1 64%,#99bed3 100%);
- background-size:31px 31px,31px 31px,100% 100%;
+ position:absolute!important;z-index:1;right:clamp(20px,4.5vw,75px)!important;top:50%!important;bottom:auto!important;
+ transform:translateY(-50%);display:flex!important;align-items:center;justify-content:center;
+ width:clamp(200px,27vw,380px)!important;height:clamp(200px,27vw,380px)!important;
+ border:0!important;background:transparent!important;pointer-events:none;overflow:visible!important;
+ box-shadow:none!important;opacity:1!important;mask-image:none!important;-webkit-mask-image:none!important;
 }
 .experience-card__visual::before{
- content:"";position:absolute;z-index:0;width:86%;aspect-ratio:1;border-radius:50%;
- border:1px solid rgba(37,89,121,.23);
- box-shadow:0 0 0 25px rgba(255,255,255,.13),0 0 0 52px rgba(255,255,255,.075),0 0 0 100px rgba(255,255,255,.052);
- transform:rotateX(38deg) rotate(-24deg);
+ content:"";display:block!important;position:absolute;inset:7%;z-index:0;border-radius:50%;
+ border:2px solid rgba(58,73,82,.38);
+ box-shadow:inset 1px 2px 1px rgba(255,255,255,.56),0 1px 0 rgba(255,255,255,.74),0 0 0 7px rgba(61,77,86,.085);
+ transform:none!important;
 }
 .experience-card__visual::after{
- content:"";position:absolute;z-index:1;inset:0;pointer-events:none;
- background:linear-gradient(117deg,transparent 0 47%,rgba(250,117,106,.9) 47.05% 47.6%,transparent 47.67% 100%);
- opacity:.75;
+ content:"";display:block!important;position:absolute;inset:14%;z-index:0;border-radius:50%;
+ border:1px dashed rgba(60,75,82,.36);background:none!important;opacity:1!important;
+ transform:none!important;
 }
 .experience-card__visual img{
- display:block;position:relative;z-index:3;width:min(74%,350px);height:auto;max-height:78%;object-fit:contain;
- filter:drop-shadow(0 22px 25px rgba(29,71,98,.22));
- transition:transform .75s cubic-bezier(.16,.8,.2,1);
+ position:relative;z-index:2;width:82%!important;height:82%!important;max-height:unset!important;object-fit:contain;
+ opacity:.46!important;mix-blend-mode:multiply!important;
+ filter:grayscale(1) brightness(.60) contrast(1.4) drop-shadow(1px 2px 0 rgba(255,255,255,.66))!important;
+ transform:none!important;transition:opacity .3s ease!important;
 }
-.experience-card.is-current .experience-card__visual img{transform:scale(1.07) translateY(-5px)}
-.experience-card__orbit{width:73%;opacity:.75}
-.experience-card__visual-index{
- position:absolute;right:6px;bottom:-25px;z-index:2;color:rgba(16,61,91,.14);
- font-size:clamp(160px,19vw,270px);letter-spacing:-.09em;font-weight:800;line-height:1;
-}
-.experience-card[data-exp-index="0"]{--exp-signal:#e46d63}
-.experience-card[data-exp-index="1"]{--exp-signal:#db6a61}
-.experience-card[data-exp-index="2"]{--exp-signal:#ca665e}
-.experience-card[data-exp-index="3"]{--exp-signal:#b75c59}
-.experience-card[data-exp-index="4"]{--exp-signal:#97C7DF}
-.experience-card[data-exp-index="1"] .experience-card__visual{background-color:#B9D5E5}
-.experience-card[data-exp-index="2"] .experience-card__visual{background-color:#9FBED0}
-.experience-card[data-exp-index="3"] .experience-card__visual{background-color:#98B3C4}
-.experience-card[data-exp-index="4"] .experience-card__face{background:#102E43;border-color:#5D879C;color:#f8fcff}
-.experience-card[data-exp-index="4"] .experience-card__tab{
- background:#17364a;border-bottom-color:rgba(214,235,247,.26);
-}
+.experience-card__visual-index,.experience-card__orbit{display:none!important}
+.experience-card.is-current .experience-card__visual img{transform:none!important;opacity:.50!important}
+.experience-card[data-exp-index] .experience-card__face,
+.experience-card[data-exp-index="4"] .experience-card__face{color:#213843!important}
+.experience-card[data-exp-index="4"] .experience-card__tab{background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(53,68,78,.035))!important}
+.experience-card[data-exp-index="4"] .experience-card__detail{background:transparent!important}
 .experience-card[data-exp-index="4"] .experience-card__role,
-.experience-card[data-exp-index="4"] .experience-card__heading,
-.experience-card[data-exp-index="4"] .experience-card__outcome strong{color:#f8fcff}
 .experience-card[data-exp-index="4"] .experience-card__company,
-.experience-card[data-exp-index="4"] .experience-card__lead,
+.experience-card[data-exp-index="4"] .experience-card__heading,
+.experience-card[data-exp-index="4"] .experience-card__outcome strong,
 .experience-card[data-exp-index="4"] .experience-card__eyebrow,
+.experience-card[data-exp-index="4"] .experience-card__lead,
 .experience-card[data-exp-index="4"] .experience-card__description,
-.experience-card[data-exp-index="4"] .experience-card__outcome span{color:#c0d9e9}
-.experience-card[data-exp-index="4"] .experience-card__detail{
- background:linear-gradient(130deg,#183f57 0%,#113147 100%);
+.experience-card[data-exp-index="4"] .experience-card__outcome span{color:inherit!important}
+.experience-card[data-exp-index="4"] .experience-card__role,
+.experience-card[data-exp-index="4"] .experience-card__company{color:#475761!important}
+.experience-card[data-exp-index="4"] .experience-card__visual{background:transparent!important;opacity:1!important}
+.experience-card[data-exp-index="4"] .experience-card__visual img{filter:grayscale(1) brightness(.60) contrast(1.4) drop-shadow(1px 2px 0 rgba(255,255,255,.66))!important}
+/* The meter belongs to the cards, with fine major/minor machining marks. */
+.experience-rail{color:#405b6d}
+.experience-rail__caption,.experience-rail__present{font-family:monospace;font-weight:700;letter-spacing:.14em;color:#516b7c}
+.experience-rail__track{
+ position:relative;min-height:clamp(330px,59svh,530px);
 }
-.experience-card[data-exp-index="4"] .experience-card__outcome{border-top-color:rgba(214,236,248,.27)}
-.experience-card[data-exp-index="4"] .experience-card__tab-arrow{
- color:#d9edf6;border-color:rgba(200,229,241,.4);
+.experience-rail__track::before{
+ content:"";position:absolute;top:16px;bottom:16px;left:50%;width:34px;height:auto;
+ transform:translateX(-50%);
+ background:
+   linear-gradient(90deg,transparent 47%,rgba(49,80,98,.50) 48%,rgba(49,80,98,.50) 52%,transparent 53%),
+   repeating-linear-gradient(to bottom,transparent 0,transparent 8px,rgba(50,78,96,.43) 8px,rgba(50,78,96,.43) 9px,transparent 9px,transparent 17px);
+ opacity:1;
 }
-.experience-card[data-exp-index="4"] .experience-card__visual{
- border-left-color:rgba(202,230,245,.15);background-color:#0d293e;
- background-image:
- linear-gradient(rgba(186,226,247,.09) 1px,transparent 1px),
- linear-gradient(90deg,rgba(186,226,247,.09) 1px,transparent 1px),
- radial-gradient(ellipse at 50% 40%,#29536b,#102b3e 74%);
+.experience-rail__track::after{
+ content:"";position:absolute;top:18px;bottom:18px;left:50%;width:18px;transform:translateX(-50%);
+ border-left:1px solid rgba(52,78,96,.20);border-right:1px solid rgba(52,78,96,.20);
+ pointer-events:none;
 }
-.experience-card[data-exp-index="4"] .experience-card__visual img{
- filter:brightness(0) invert(1) drop-shadow(0 19px 22px rgba(0,0,0,.1));
+.experience-rail__fill{background:#36596d;z-index:1;width:3px!important;opacity:.74;transition:height .3s ease}
+.experience-rail__point{position:relative;z-index:3;background:#C8DAE8!important;color:#617c8b!important;border-radius:0;padding:7px 3px}
+.experience-rail__point::before{
+ content:"";position:absolute;top:50%;right:calc(100% + 2px);
+ width:10px;height:1px;background:rgba(46,78,97,.6);transform:translateY(-50%);
+ transition:width .24s ease;
 }
-.experience-card[data-exp-index="4"] .experience-card__visual::after{
- background:linear-gradient(117deg,transparent 0 47%,rgba(151,199,223,.65) 47.05% 47.6%,transparent 47.67% 100%);
+.experience-rail__year{
+ font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace!important;
+ font-size:13px;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums;
 }
-.experience-card[data-exp-index="4"] .experience-card__visual-index{color:rgba(221,242,250,.11)}
-.experience-card[data-exp-index="4"] .experience-card__visual::before{border-color:rgba(188,218,232,.24)}
-@media(max-width:1023px){
- .experience-stack__intro{width:calc(100% - 54px)}
- .experience-card__body{grid-template-columns:minmax(0,1.15fr) minmax(145px,.75fr)}
- .experience-card__detail{padding:clamp(15px,2.5vw,24px);gap:8px}
- .experience-card__heading{font-size:clamp(27px,3.3vw,39px)}
- .experience-card__outcome strong{font-size:clamp(34px,4.6vw,56px)}
- .experience-card__lead,.experience-card__description{font-size:12px;line-height:1.36}
+.experience-rail__dash{width:13px;height:1px;background:#5c7888}
+.experience-rail__point.is-active .experience-rail__year{font-size:24px;color:#193e53;font-weight:800}
+.experience-rail__point.is-active .experience-rail__dash{width:31px;height:3px;background:#224e67}
+.experience-rail__point.is-active::before{width:23px;height:2px;background:#244e65}
+.experience-rail__point:hover .experience-rail__year{color:#193e53}
+.experience-stack__runout{height:clamp(160px,28svh,300px)}
+/* Same cold divider color throughout the remaining light sections, no rogue bright-white lines. */
+.faq,.faq-item{border-color:rgba(67,102,125,.28)!important}
+.faq_split_bar{background-color:rgba(67,102,125,.28)!important}
+@media(max-width:1100px){
+ .experience-stack__intro{width:calc(100% - 50px);gap:25px;grid-template-columns:minmax(0,1.25fr) minmax(225px,.65fr)}
+ .experience-stack__portrait{max-width:360px!important;max-height:480px!important}
+ .experience-card__detail{width:min(71%,700px);padding:clamp(18px,2.6vw,28px);gap:clamp(7px,1.1vh,11px)}
+ .experience-card__heading{font-size:clamp(28px,3vw,37px)!important}
+ .experience-card__visual{right:15px!important;width:clamp(165px,26vw,290px)!important;height:clamp(165px,26vw,290px)!important}
 }
 @media(max-width:700px){
- .experience-stack{padding-top:clamp(110px,17vh,165px)}
- .experience-stack__intro{width:calc(100% - 38px)}
- .experience-stack__intro h2{font-size:clamp(36px,8.3vw,50px)}
- .experience-stack__photo-stage{height:100svh;min-height:0;margin:53px 0 75px}
- .experience-stack__photo-stage::before{filter:blur(24px) saturate(.8) brightness(.9)}
- .experience-stack__photo-label{font-size:9px;left:18px;right:18px;bottom:25px}
- .experience-card__face{border-radius:18px;box-shadow:0 19px 45px rgba(28,62,82,.17),0 3px 9px rgba(28,62,82,.08)}
- .experience-card__face::before{width:3px}
- .experience-card__tab{
-  height:var(--exp-peek);padding:8px 39px 8px 13px;gap:3px;
-  background:rgba(244,250,253,.93);
+ .experience-stack{padding-top:clamp(100px,14vh,140px)}
+ .experience-stack__intro{width:calc(100% - 36px);grid-template-columns:1fr;gap:22px;margin-bottom:clamp(60px,9vh,100px)}
+ .experience-stack__intro h2{font-size:clamp(36px,8.5vw,51px);line-height:1.05}
+ .experience-stack__portrait{
+  display:block;justify-self:center!important;width:min(100%,350px)!important;
+  max-width:350px!important;height:auto!important;max-height:480px!important;
+  object-fit:contain!important;border-radius:24px!important;
  }
- .experience-card__tab-arrow{width:22px;height:22px;right:8px}
+ .experience-card__face{border-radius:15px!important}
+ .experience-card__tab{padding:7px 35px 7px 12px!important;gap:2px}
+ .experience-card__tab::after{left:11px;right:11px;height:4px}
+ .experience-card__role{font-size:clamp(10.5px,2.8vw,13px)!important;line-height:1.13!important}
+ .experience-card__company{font-size:clamp(9.8px,2.5vw,12px)!important;line-height:1.13!important}
+ .experience-card__tab-arrow{width:21px;height:21px;right:7px}
  .experience-card__tab-arrow svg{width:13px;height:13px}
- .experience-card__role{font-size:clamp(10.5px,2.8vw,13px);line-height:1.14}
- .experience-card__company{font-size:clamp(9.7px,2.5vw,11px);line-height:1.15}
- .experience-card__body{position:relative;display:block;min-height:0}
- .experience-card__detail{position:relative;z-index:2;gap:clamp(7px,1.1vh,11px);padding:clamp(14px,3.6vw,19px)}
- .experience-card__eyebrow{font-size:10px}
- .experience-card__heading{font-size:clamp(26px,6.7vw,36px);line-height:1.04}
- .experience-card__lead{font-size:clamp(11px,2.85vw,13px);line-height:1.35;max-width:100%}
- .experience-card__outcome{margin-top:1px;padding-top:11px;gap:3px 10px}
- .experience-card__outcome strong{font-size:clamp(31px,8vw,44px)}
- .experience-card__outcome span{font-size:10px}
- .experience-card__description{font-size:clamp(10.4px,2.7vw,12px);line-height:1.37;max-width:100%}
+ .experience-card__body{display:block!important}
+ .experience-card__detail{
+  width:100%!important;max-width:100%;position:relative;z-index:2;
+  gap:clamp(6px,1vh,10px);padding:clamp(12px,3.5vw,18px);
+ }
+ .experience-card__heading{font-size:clamp(24px,6.2vw,33px)!important}
+ .experience-card__lead{font-size:clamp(11px,2.9vw,13px)!important;line-height:1.3!important}
+ .experience-card__outcome{gap:4px 10px;padding-top:9px}
+ .experience-card__outcome strong{font-size:clamp(28px,7.3vw,40px)!important}
+ .experience-card__outcome span{font-size:10px!important}
+ .experience-card__description{font-size:clamp(10.5px,2.6vw,12px)!important;line-height:1.36!important}
  .experience-card__visual{
-  display:flex!important;position:absolute;right:-7px;bottom:-10px;top:auto;left:auto;z-index:1;
-  width:min(42%,170px);height:clamp(108px,18vh,150px);border-left:0;
-  background:radial-gradient(circle at center,rgba(163,198,219,.22),transparent 72%);
-  opacity:.41;pointer-events:none;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 23%);
-  mask-image:linear-gradient(90deg,transparent,#000 23%);
+  top:auto!important;bottom:5px!important;right:10px!important;transform:none!important;
+  width:clamp(105px,34vw,148px)!important;height:clamp(105px,34vw,148px)!important;
+  opacity:.87!important;
  }
- .experience-card__visual img{width:96%;max-height:90%;transform:none!important;
-  filter:drop-shadow(0 13px 16px rgba(29,71,98,.15))}
- .experience-card__visual::before{width:75%;box-shadow:0 0 0 15px rgba(255,255,255,.06)}
- .experience-card__visual::after{opacity:.3}
- .experience-card__visual-index{font-size:100px;bottom:-10px;right:1px;opacity:.4}
- .experience-card__orbit{width:65%}
- .experience-card[data-exp-index="4"] .experience-card__visual{
-  background:radial-gradient(circle at center,rgba(147,202,227,.21),transparent 70%);
-  opacity:.42;
- }
- .experience-card[data-exp-index="4"] .experience-card__description{color:#c0d9e9}
+ .experience-card__visual img{opacity:.36!important}
+ .experience-card.is-current .experience-card__visual img{opacity:.4!important}
+ .experience-card__visual::before{border-width:1px}
+ .experience-rail__track{min-height:min(56svh,425px)}
+ .experience-rail__track::before{width:18px}
+ .experience-rail__track::after{width:9px}
+ .experience-rail__year{font-size:10px!important}
+ .experience-rail__point{padding:7px 1px}
+ .experience-rail__point::before{width:5px;right:calc(100% + 1px)}
+ .experience-rail__point.is-active .experience-rail__year{font-size:15px!important}
+ .experience-rail__point.is-active::before{width:10px}
+ .experience-rail__dash{width:8px}
+ .experience-rail__point.is-active .experience-rail__dash{width:22px;height:2px}
 }
 @media(max-width:360px){
- .experience-card__role{font-size:10.2px}
- .experience-card__company{font-size:9.3px}
- .experience-card__heading{font-size:clamp(23px,6.5vw,28px)}
- .experience-card__lead,.experience-card__description{font-size:10.6px}
- .experience-card__visual{width:100px;height:110px;opacity:.2}
+ .experience-card__role{font-size:10px!important}
+ .experience-card__heading{font-size:24px!important}
+ .experience-card__lead,.experience-card__description{font-size:10.5px!important}
+ .experience-card__visual{width:106px!important;height:106px!important;opacity:.64!important}
 }
-@media(max-height:690px){
- .experience-card__detail{gap:5px}
- .experience-card__description{line-height:1.26}
-}
-@media(prefers-reduced-motion:reduce){
- .experience-card__visual img{transition:none!important}
-}
+@media(prefers-reduced-motion:reduce){.experience-card__visual img{transition:none!important}}
 </style>
 </head><body id="top" style="background-color: #D0E1EB;" data-astro-cid-5hce7sga><div class="transition-pages"></div><div class="mobile-nav__overlay"></div><header><nav class="header__nav-left"><a href="#flow">Подход</a><a href="#features">Опыт</a><a href="#faq">Принципы</a><a href="#contact">Контакты</a></nav><nav class="header__nav-right"><div class="header__ctas"><a href="mailto:i@shelekhov-rd.ru" class="pill-btn pill-btn--dark"><span class="pill-btn-span">Связаться</span></a></div><button class="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false"><span class="menu-btn__icon"><span class="menu-btn__line menu-btn__line--1"></span><span class="menu-btn__line menu-btn__line--2"></span><span class="menu-btn__line menu-btn__line--3"></span></span></button></nav><nav class="mobile-nav" aria-label="Mobile navigation"><div class="mobile-nav__panel-bg"></div><div class="mobile-nav__panel"><div class="mobile-nav__header"><a href="#top" class="mobile-nav__logo"><span style="font-weight:600;letter-spacing:0.02em;font-size:1rem;color:inherit;white-space:nowrap">Роман Шелехов</span></a><button class="mobile-nav__close" type="button" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none"><rect y="14.1421" width="20" height="2" transform="rotate(-45 0 14.1421)" fill="#050419"></rect><rect x="1.41406" y="0.000610352" width="20" height="2" transform="rotate(45 1.41406 0.000610352)" fill="#050419"></rect></svg></button></div><ul class="mobile-nav__list"><li class="mobile-nav__item"><a href="#flow">Подход</a></li><li class="mobile-nav__item"><a href="#features">Опыт</a></li><li class="mobile-nav__item"><a href="#faq">Принципы</a></li><li class="mobile-nav__item"><a href="#contact">Контакты</a></li></ul><div class="mobile-nav__ctas"><div class="mncta"><a href="mailto:i@shelekhov-rd.ru" class="pill-btn pill-btn--dark mobile-nav__cta"><span class="pill-btn-span">Связаться</span></a></div></div></div></nav></header><main data-taxi><div data-taxi-view="home"><div class="top"><section class="hero"><div class="hero__content"><h1 class="hero__title" style="opacity:0;transform:perspective(1000px) translateX(50%) translate3d(-222.2px, 88px, 0) rotateY(60deg) rotateX(35deg);"><span>Роман Шелехов</span></h1><p class="hero__subtitle" style="opacity:0;transform:perspective(1000px) translateX(50%) translate3d(-222.2px, 88px, 0) rotateY(60deg) rotateX(35deg);"><span>Финансовый директор, к.э.н.<br/></span><span>Более 20 лет управляю финансами и экономикой предприятий, соединяя точный расчёт с пониманием реального производства.</span></p><div class="hero__cta flx" aria-hidden="true" hidden></div></div><img src="/roman-shelekhov-preview/media/roman-profile.webp" alt="Роман Шелехов" class="hero__person" loading="eager" decoding="async" fetchpriority="high"><div class="hero__scroll-btn"><span><span class="hsbtn-in" style="transform:translate3d(0, calc(100% + 7px), 0);">прокрутите, чтобы узнать подробнее</span></span></div></section><div class="hero-spacer"></div><section class="flow" id="flow"><div class="flow__wrapper"><div class="flow__steps"><div class="flow__step" data-step="1"><div class="flow__header"><div class="flow__number"><span>01</span></div><h3 class="flow__title">Инженерная основа</h3></div><div class="flow__body"><div class="flow__body-inner"><div class="flow__track"><div class="flow__track-bar"><div class="flow__track-fill"></div></div></div><p class="flow__description">Работа с проектно-сметной документацией и инвестиционными программами научила меня оценивать не только расчётную стоимость проекта, но и реальные условия его выполнения. Этот опыт до сих пор помогает предметно обсуждать капитальные вложения с техническими подразделениями.</p></div></div></div><div class="flow__step" data-step="2"><div class="flow__header"><div class="flow__number"><span>02</span></div><h3 class="flow__title">Экономика предприятия</h3></div><div class="flow__body"><div class="flow__body-inner"><div class="flow__track"><div class="flow__track-bar"><div class="flow__track-fill"></div></div></div><p class="flow__description">В энергетике и коммунальной инфраструктуре финансовая модель не существует отдельно от производственных процессов, тарифного регулирования и состояния активов. Выстраивая бюджетирование и управленческий учёт, я стремился соединять экономические показатели с фактической работой подразделений.</p></div></div></div><div class="flow__step" data-step="3"><div class="flow__header"><div class="flow__number"><span>03</span></div><h3 class="flow__title">Финансирование и ликвидность</h3></div><div class="flow__body"><div class="flow__body-inner"><div class="flow__track"><div class="flow__track-bar"><div class="flow__track-fill"></div></div></div><p class="flow__description">Управление обязательствами требует учитывать не только доступный объём кредитных ресурсов, но и сроки поступлений, стоимость заёмных средств, инвестиционные потребности и график платежей. Свою задачу вижу в том, чтобы финансирование поддерживало деятельность предприятия, а не создавало дополнительные ограничения.</p></div></div></div><div class="flow__step" data-step="4"><div class="flow__header"><div class="flow__number"><span>04</span></div><h3 class="flow__title">Технологии в управлении</h3></div><div class="flow__body"><div class="flow__body-inner"><div class="flow__track"><div class="flow__track-bar"><div class="flow__track-fill"></div></div></div><p class="flow__description">Опыт внедрения ERP и автоматизации отчётности показал, насколько качество управленческих решений зависит от данных и организации процессов. Сейчас, работая в IT-холдинге, я продолжаю развивать этот подход, включая практическое использование инструментов анализа и искусственного интеллекта.</p></div></div></div></div></div></section><section class="experience-stack" id="features" aria-labelledby="experience-heading">
   <div class="experience-stack__intro">
@@ -879,11 +856,8 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
       <p>За время работы менялись предприятия, задачи и масштаб ответственности. Инженерная основа постепенно дополнялась экономикой, финансированием и управлением денежными потоками.</p>
       <span class="experience-stack__hint">Листай вниз, чтобы пройти пять этапов <span aria-hidden="true">↓</span></span>
     </div>
+    <img class="experience-stack__portrait" src="/roman-shelekhov-preview/media/roman-feature-mshev.webp" alt="Роман Шелехов на фоне воды" loading="lazy" decoding="async" width="1088" height="1445">
   </div>
-  <figure class="experience-stack__photo-stage">
-    <img class="experience-stack__portrait" src="/roman-shelekhov-preview/media/roman-feature-mshev.webp" alt="Роман Шелехов на фоне воды и неба" loading="lazy" decoding="async" width="1088" height="1445">
-    <figcaption class="experience-stack__photo-label"><span>ПРОФЕССИОНАЛЬНЫЙ ПУТЬ</span><span>2004 — СЕГОДНЯ</span></figcaption>
-  </figure>
   <div class="experience-stack__layout">
     <div class="experience-stack__cards" id="experience-cards">
         <span class="experience-stack__anchor" id="exp-2004" aria-hidden="true"></span>
@@ -896,7 +870,7 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
             </button>
             <div class="experience-card__body">
               <div class="experience-card__detail">
-                <div class="experience-card__eyebrow"><span>2004–2014</span><span>01 / 05</span></div>
+                <div class="experience-card__eyebrow"><span>2004–2014</span></div>
                 <h3 class="experience-card__heading">Инженерная основа</h3>
                 <p class="experience-card__lead">Проектно-сметная документация, стоимость работ и подготовка инвестиционных решений.</p>
                 <div class="experience-card__outcome"><strong>ПТО</strong><span>От расчётов к организации технической работы</span></div>
@@ -905,7 +879,6 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
               <div class="experience-card__visual" aria-hidden="true">
                 <div class="experience-card__orbit"></div>
                 <img src="/roman-shelekhov-preview/icons/features/bks-3d.svg" alt="" loading="lazy" decoding="async" width="280" height="280">
-                <span class="experience-card__visual-index">01</span>
               </div>
             </div>
           </div>
@@ -920,7 +893,7 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
             </button>
             <div class="experience-card__body">
               <div class="experience-card__detail">
-                <div class="experience-card__eyebrow"><span>2014–2022</span><span>02 / 05</span></div>
+                <div class="experience-card__eyebrow"><span>2014–2022</span></div>
                 <h3 class="experience-card__heading">Экономика предприятия</h3>
                 <p class="experience-card__lead">Тарифы, инвестиционные программы, бюджетирование и управленческий учёт.</p>
                 <div class="experience-card__outcome"><strong>ERP</strong><span>Внедрение за 8 месяцев</span></div>
@@ -929,7 +902,6 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
               <div class="experience-card__visual" aria-hidden="true">
                 <div class="experience-card__orbit"></div>
                 <img src="/roman-shelekhov-preview/icons/features/bks-3d.svg" alt="" loading="lazy" decoding="async" width="280" height="280">
-                <span class="experience-card__visual-index">02</span>
               </div>
             </div>
           </div>
@@ -944,7 +916,7 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
             </button>
             <div class="experience-card__body">
               <div class="experience-card__detail">
-                <div class="experience-card__eyebrow"><span>2022–2024</span><span>03 / 05</span></div>
+                <div class="experience-card__eyebrow"><span>2022–2024</span></div>
                 <h3 class="experience-card__heading">Финансирование и инвестиции</h3>
                 <p class="experience-card__lead">Финансовое управление крупным энергетическим предприятием с коллективом около 1 300 сотрудников.</p>
                 <div class="experience-card__outcome"><strong>600+ млн ₽</strong><span>Привлечённые заёмные средства</span></div>
@@ -953,7 +925,6 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
               <div class="experience-card__visual" aria-hidden="true">
                 <div class="experience-card__orbit"></div>
                 <img src="/roman-shelekhov-preview/icons/features/ramenskaya-teploset-3d.svg" alt="" loading="lazy" decoding="async" width="280" height="280">
-                <span class="experience-card__visual-index">03</span>
               </div>
             </div>
           </div>
@@ -968,7 +939,7 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
             </button>
             <div class="experience-card__body">
               <div class="experience-card__detail">
-                <div class="experience-card__eyebrow"><span>2024–2025</span><span>04 / 05</span></div>
+                <div class="experience-card__eyebrow"><span>2024–2025</span></div>
                 <h3 class="experience-card__heading">Финансовая дисциплина</h3>
                 <p class="experience-card__lead">Казначейство, платёжный календарь и финансовые процессы предприятия с четырьмя филиалами.</p>
                 <div class="experience-card__outcome"><strong>−10%</strong><span>Просроченная кредиторская задолженность</span></div>
@@ -977,7 +948,6 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
               <div class="experience-card__visual" aria-hidden="true">
                 <div class="experience-card__orbit"></div>
                 <img src="/roman-shelekhov-preview/icons/features/mshv-valve-3d.svg" alt="" loading="lazy" decoding="async" width="280" height="280">
-                <span class="experience-card__visual-index">04</span>
               </div>
             </div>
           </div>
@@ -992,7 +962,7 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
             </button>
             <div class="experience-card__body">
               <div class="experience-card__detail">
-                <div class="experience-card__eyebrow"><span>2025 — н. в.</span><span>05 / 05</span></div>
+                <div class="experience-card__eyebrow"><span>2025 — н. в.</span></div>
                 <h3 class="experience-card__heading">Финансы и технологии</h3>
                 <p class="experience-card__lead">Финансовое управление, бюджетирование, ликвидность и автоматизация отчётности.</p>
                 <div class="experience-card__outcome"><strong>IT</strong><span>Цифровые управленческие процессы</span></div>
@@ -1001,7 +971,6 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
               <div class="experience-card__visual" aria-hidden="true">
                 <div class="experience-card__orbit"></div>
                 <img src="/roman-shelekhov-preview/icons/features/it-holding-3d.svg" alt="" loading="lazy" decoding="async" width="280" height="280">
-                <span class="experience-card__visual-index">05</span>
               </div>
             </div>
           </div>
