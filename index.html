@@ -528,7 +528,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
     raf=0;
     var vh=Math.max(1,window.innerHeight);
     var y=Math.max(0,window.scrollY||window.pageYOffset||0);
-    var p=clamp(y/(vh*.94));
+    var p=window.innerWidth<=1023?Math.max(0,y/(vh*.94)):clamp(y/(vh*.94));
     var mobile=window.innerWidth<=1023;
     var photo=1-phase(p,mobile?.36:.075,mobile?1.26:.57);
     var copy=1-phase(p,mobile?.31:.11,mobile?1.24:.64);
