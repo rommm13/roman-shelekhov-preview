@@ -1,0 +1,4 @@
+# Test version: do not index until production.
+# Crawlers must be allowed to fetch pages so they can read the noindex meta directive.
+User-agent: *
+Allow: /
