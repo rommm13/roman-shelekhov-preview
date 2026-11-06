@@ -570,7 +570,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
   function check(){
     if(document.body.classList.contains(readyClass))return;
     var state=window.__vectrLoaderUI;
-    var ready=!!(state&&(state.renderedReadyAt||state.loadEndAt&&performance.now()-state.loadEndAt>2300));
+    var ready=!!(state&&state.renderedReadyAt);
     if(ready&&document.querySelector('#app > canvas')){
       document.body.classList.add(readyClass);
       return;
