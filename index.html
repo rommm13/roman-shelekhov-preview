@@ -529,10 +529,11 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
     var vh=Math.max(1,window.innerHeight);
     var y=Math.max(0,window.scrollY||window.pageYOffset||0);
     var p=clamp(y/(vh*.94));
-    var photo=1-phase(p,.075,.57);
-    var copy=1-phase(p,.11,.64);
-    var hint=1-phase(p,.22,.68);
-    var wash=1-phase(p,.075,.77);
+    var mobile=window.innerWidth<=1023;
+    var photo=1-phase(p,mobile?.36:.075,mobile?1.26:.57);
+    var copy=1-phase(p,mobile?.31:.11,mobile?1.24:.64);
+    var hint=1-phase(p,mobile?.40:.22,mobile?1.30:.68);
+    var wash=1-phase(p,mobile?.56:.075,mobile?1.42:.77);
     var sceneRise=phase(p,.06,.84);
     var sceneY=vh*.92*(1-sceneRise);
     var flow=document.querySelector('.flow');
