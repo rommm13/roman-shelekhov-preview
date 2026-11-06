@@ -562,7 +562,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
     if(raf)return;
     raf=requestAnimationFrame(paint);
   }
-  window.addEventListener('scroll',requestPaint,{passive:true});
+  window.addEventListener('scroll',function(){if(window.innerWidth<=1023)paint();else requestPaint()},{passive:true});
   window.addEventListener('resize',requestPaint,{passive:true});
   window.addEventListener('pageshow',requestPaint);
   window.addEventListener('load',requestPaint,{once:true});
