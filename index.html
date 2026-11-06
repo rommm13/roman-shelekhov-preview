@@ -371,7 +371,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
 }
 @media (max-width:1023px){
   /* Extend the hero runway so the 3D scene enters later, below the portrait. */
-  .hero-spacer{height:125svh !important;min-height:125svh !important}
+  .hero-spacer{height:190svh !important;min-height:190svh !important}
 }
 </style>
 <style id="mobile-experience-layout">
@@ -544,7 +544,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
     hero.style.setProperty('--hero-hint-opacity',hint.toFixed(4));
     hero.style.setProperty('--hero-wash-opacity',wash.toFixed(4));
     if(window.innerWidth<=1023){
-      var reveal=116*phase(p,.64,1.38);
+      var reveal=116*phase(p,.74,1.96);
       var exit=phase((vh*1.40-flowBottom)/vh,0,1);
       root.style.setProperty('--mobile-scene-reveal',reveal.toFixed(2)+'%');
       var entry=phase(p,.64,.98);
