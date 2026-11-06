@@ -1247,8 +1247,10 @@ body.experience-loader-done #loader{display:none!important;visibility:hidden!imp
   function scrollToCard(i){
     const index=Math.max(0,Math.min(anchors.length-1,i));
     const y=deckOrigin()+anchors[index].offsetTop-topOffset()+3;
-    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    window.scrollTo({top:Math.max(0,Math.round(y)),behavior:reduced?'instant':'smooth'});
+    // A direct precise jump avoids a second smooth-scroll animation fighting Lenis.
+    // The sticky cards keep their natural wheel/touch motion; only timeline clicks snap.
+    window.scrollTo({top:Math.max(0,Math.round(y)),behavior:'instant'});
+    requestUpdate();
   }
   controls.forEach(function(button){
     button.addEventListener('click',function(event){
