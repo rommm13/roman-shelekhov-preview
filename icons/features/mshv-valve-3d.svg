@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Щёлковский водоканал, объёмная эмблема">
+<title>Щёлковский водоканал, объёмная эмблема</title>
+<defs>
+<linearGradient id="ivory" x1="0" y1="0" x2=".7" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#ffffff"/><stop offset=".37" stop-color="#fcfdff"/><stop offset=".74" stop-color="#e9efff"/><stop offset="1" stop-color="#cbd9f5"/></linearGradient>
+<linearGradient id="rim" x1="0" y1="0" x2=".1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".42" stop-color="#f9fbff"/><stop offset=".8" stop-color="#e1eafa"/><stop offset="1" stop-color="#bccdf0"/></linearGradient>
+<filter id="lift" x="-28%" y="-28%" width="160%" height="170%" color-interpolation-filters="sRGB"><feDropShadow dx="3" dy="10" stdDeviation="9" flood-color="#486da6" flood-opacity=".40"/><feDropShadow dx="-2.5" dy="-3" stdDeviation="2.5" flood-color="#ffffff" flood-opacity=".77"/></filter>
+<filter id="soft" x="-25%" y="-25%" width="155%" height="160%" color-interpolation-filters="sRGB"><feDropShadow dx="2" dy="5" stdDeviation="4.5" flood-color="#6487bc" flood-opacity=".40"/></filter>
+</defs>
+
+<g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#lift)">
+<path d="M300 47 C262 94 163 212 127 285 C98 341 98 391 111 431 C132 510 210 553 300 553 C390 553 468 510 489 431 C502 391 502 341 473 285 C437 212 338 94 300 47Z" stroke="url(#rim)" stroke-width="27"/>
+<path d="M300 100 C261 148 184 241 154 304 C128 354 137 412 166 451 C198 495 242 520 300 520 C358 520 402 495 434 451 C463 412 472 354 446 304 C416 241 339 148 300 100Z" stroke="url(#rim)" stroke-width="23"/>
+<path d="M300 47 C262 94 163 212 127 285 C98 341 98 391 111 431 C132 510 210 553 300 553" stroke="#fff" stroke-opacity=".64" stroke-width="4"/>
+</g>
+<g fill="url(#ivory)" stroke="#fbfdff" stroke-width="4" stroke-linejoin="round" filter="url(#lift)">
+<path d="M207 244 Q202 231 218 230 H228 Q239 230 250 239 Q272 258 290 241 Q300 230 312 230 Q326 230 339 242 Q356 260 375 242 Q389 230 409 230 Q425 229 418 247 L410 263 Q408 269 397 269 H222 Q213 269 211 260 Z"/>
+<path d="M289 282 H311 V320 H289 Z" />
+<rect x="270" y="310" width="60" height="35" rx="7"/>
+<path d="M214 358 Q240 358 253 345 Q265 334 281 334 H319 Q335 334 347 345 Q361 358 386 358 V427 Q359 426 343 442 Q323 461 300 461 Q277 461 257 442 Q241 426 214 427 Z"/>
+<rect x="167" y="349" width="46" height="94" rx="9" />
+<rect x="387" y="349" width="46" height="94" rx="9" />
+</g>
+<g fill="none" stroke="#b5c9ee" stroke-opacity=".54" stroke-linecap="round">
+<path d="M171 437 H208 M391 437 H428" stroke-width="3"/>
+<path d="M222 424 Q240 425 261 444 Q297 474 340 444 Q356 427 380 425" stroke-width="3"/>
+</g>
+</svg>
