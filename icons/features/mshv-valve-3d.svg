@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Щёлковский водоканал, объёмная эмблема">
 <title>Щёлковский водоканал, объёмная эмблема</title>
 <defs>
-<linearGradient id="ivory" x1="0" y1="0" x2=".7" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#F8FCFF"/><stop offset=".37" stop-color="#E8F3FA"/><stop offset=".74" stop-color="#D6E7F2"/><stop offset="1" stop-color="#B5CDDE"/></linearGradient>
-<linearGradient id="rim" x1="0" y1="0" x2=".1" y2="1"><stop offset="0" stop-color="#F6FCFF"/><stop offset=".42" stop-color="#E8F2F9"/><stop offset=".8" stop-color="#D1E2EE"/><stop offset="1" stop-color="#A9C4D7"/></linearGradient>
-<filter id="lift" x="-28%" y="-28%" width="160%" height="170%" color-interpolation-filters="sRGB"><feDropShadow dx="3" dy="10" stdDeviation="9" flood-color="#6389AA" flood-opacity=".39"/><feDropShadow dx="-2.5" dy="-3" stdDeviation="2.5" flood-color="#ffffff" flood-opacity=".77"/></filter>
-<filter id="soft" x="-25%" y="-25%" width="155%" height="160%" color-interpolation-filters="sRGB"><feDropShadow dx="2" dy="5" stdDeviation="4.5" flood-color="#759BBC" flood-opacity=".38"/></filter>
+<linearGradient id="ivory" x1="0" y1="0" x2=".7" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#A9B9C8"/><stop offset=".37" stop-color="#7D8FA2"/><stop offset=".74" stop-color="#60758A"/><stop offset="1" stop-color="#485D71"/></linearGradient>
+<linearGradient id="rim" x1="0" y1="0" x2=".1" y2="1"><stop offset="0" stop-color="#B9C9D6"/><stop offset=".42" stop-color="#91A3B4"/><stop offset=".8" stop-color="#667C91"/><stop offset="1" stop-color="#445D73"/></linearGradient>
+<filter id="lift" x="-28%" y="-28%" width="160%" height="170%" color-interpolation-filters="sRGB"><feDropShadow dx="3" dy="10" stdDeviation="9" flood-color="#30485D" flood-opacity=".49"/><feDropShadow dx="-2.5" dy="-3" stdDeviation="2.5" flood-color="#E8F2FA" flood-opacity=".56"/></filter>
+<filter id="soft" x="-25%" y="-25%" width="155%" height="160%" color-interpolation-filters="sRGB"><feDropShadow dx="2" dy="5" stdDeviation="4.5" flood-color="#385169" flood-opacity=".47"/></filter>
 </defs>
 
 <g fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#lift)">
 <path d="M300 47 C262 94 163 212 127 285 C98 341 98 391 111 431 C132 510 210 553 300 553 C390 553 468 510 489 431 C502 391 502 341 473 285 C437 212 338 94 300 47Z" stroke="url(#rim)" stroke-width="27"/>
 <path d="M300 100 C261 148 184 241 154 304 C128 354 137 412 166 451 C198 495 242 520 300 520 C358 520 402 495 434 451 C463 412 472 354 446 304 C416 241 339 148 300 100Z" stroke="url(#rim)" stroke-width="23"/>
-<path d="M300 47 C262 94 163 212 127 285 C98 341 98 391 111 431 C132 510 210 553 300 553" stroke="#fff" stroke-opacity=".64" stroke-width="4"/>
+<path d="M300 47 C262 94 163 212 127 285 C98 341 98 391 111 431 C132 510 210 553 300 553" stroke="#CAD9E5" stroke-opacity=".64" stroke-width="4"/>
 </g>
-<g fill="url(#ivory)" stroke="#fbfdff" stroke-width="4" stroke-linejoin="round" filter="url(#lift)">
+<g fill="url(#ivory)" stroke="#B8C9D7" stroke-width="4" stroke-linejoin="round" filter="url(#lift)">
 <path d="M207 244 Q202 231 218 230 H228 Q239 230 250 239 Q272 258 290 241 Q300 230 312 230 Q326 230 339 242 Q356 260 375 242 Q389 230 409 230 Q425 229 418 247 L410 263 Q408 269 397 269 H222 Q213 269 211 260 Z"/>
 <path d="M289 282 H311 V320 H289 Z" />
 <rect x="270" y="310" width="60" height="35" rx="7"/>
@@ -20,7 +20,7 @@
 <rect x="167" y="349" width="46" height="94" rx="9" />
 <rect x="387" y="349" width="46" height="94" rx="9" />
 </g>
-<g fill="none" stroke="#A9C5DC" stroke-opacity=".54" stroke-linecap="round">
+<g fill="none" stroke="#7D98B0" stroke-opacity=".54" stroke-linecap="round">
 <path d="M171 437 H208 M391 437 H428" stroke-width="3"/>
 <path d="M222 424 Q240 425 261 444 Q297 474 340 444 Q356 427 380 425" stroke-width="3"/>
 </g>

@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 540" role="img" aria-label="IT-холдинг, стрелка цифровых решений, объёмная эмблема">
 <title>IT-холдинг, стрелка цифровых решений, объёмная эмблема</title>
 <defs>
-<linearGradient id="ivory" x1="0" y1="0" x2=".7" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#F8FCFF"/><stop offset=".37" stop-color="#E8F3FA"/><stop offset=".74" stop-color="#D6E7F2"/><stop offset="1" stop-color="#B5CDDE"/></linearGradient>
-<linearGradient id="rim" x1="0" y1="0" x2=".1" y2="1"><stop offset="0" stop-color="#F6FCFF"/><stop offset=".42" stop-color="#E8F2F9"/><stop offset=".8" stop-color="#D1E2EE"/><stop offset="1" stop-color="#A9C4D7"/></linearGradient>
-<filter id="lift" x="-28%" y="-28%" width="160%" height="170%" color-interpolation-filters="sRGB"><feDropShadow dx="3" dy="10" stdDeviation="9" flood-color="#6389AA" flood-opacity=".39"/><feDropShadow dx="-2.5" dy="-3" stdDeviation="2.5" flood-color="#ffffff" flood-opacity=".77"/></filter>
-<filter id="soft" x="-25%" y="-25%" width="155%" height="160%" color-interpolation-filters="sRGB"><feDropShadow dx="2" dy="5" stdDeviation="4.5" flood-color="#759BBC" flood-opacity=".38"/></filter>
+<linearGradient id="ivory" x1="0" y1="0" x2=".7" y2="1" gradientUnits="objectBoundingBox"><stop offset="0" stop-color="#A9B9C8"/><stop offset=".37" stop-color="#7D8FA2"/><stop offset=".74" stop-color="#60758A"/><stop offset="1" stop-color="#485D71"/></linearGradient>
+<linearGradient id="rim" x1="0" y1="0" x2=".1" y2="1"><stop offset="0" stop-color="#B9C9D6"/><stop offset=".42" stop-color="#91A3B4"/><stop offset=".8" stop-color="#667C91"/><stop offset="1" stop-color="#445D73"/></linearGradient>
+<filter id="lift" x="-28%" y="-28%" width="160%" height="170%" color-interpolation-filters="sRGB"><feDropShadow dx="3" dy="10" stdDeviation="9" flood-color="#30485D" flood-opacity=".49"/><feDropShadow dx="-2.5" dy="-3" stdDeviation="2.5" flood-color="#E8F2FA" flood-opacity=".56"/></filter>
+<filter id="soft" x="-25%" y="-25%" width="155%" height="160%" color-interpolation-filters="sRGB"><feDropShadow dx="2" dy="5" stdDeviation="4.5" flood-color="#385169" flood-opacity=".47"/></filter>
 </defs>
 
 <path d="M92 248 Q82 248 82 261 L82 310 Q82 325 96 325 H289 L228 385 Q215 399 230 412 L285 464 Q297 474 308 460 L476 291 Q490 276 476 262 L308 92 Q297 79 285 90 L230 144 Q217 157 230 170 L289 231 H96 Q92 231 92 248 Z"
 fill="none" stroke="url(#rim)" stroke-width="25" stroke-linejoin="round" stroke-linecap="round" filter="url(#lift)"/>
-<path d="M96 242 H307 L240 157 L297 103 L467 275 L297 449 L240 397 L307 316 H96" fill="none" stroke="#ffffff" stroke-opacity=".7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M96 242 H307 L240 157 L297 103 L467 275 L297 449 L240 397 L307 316 H96" fill="none" stroke="#CAD9E5" stroke-opacity=".7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="498" y="88" width="44" height="100" rx="17" transform="rotate(30 520 138)" fill="none" stroke="url(#rim)" stroke-width="19" filter="url(#soft)"/><rect x="583" y="163" width="44" height="100" rx="17" transform="rotate(55 605 213)" fill="none" stroke="url(#rim)" stroke-width="19" filter="url(#soft)"/><rect x="594" y="269" width="44" height="100" rx="17" transform="rotate(73 616 319)" fill="none" stroke="url(#rim)" stroke-width="19" filter="url(#soft)"/><rect x="499" y="351" width="44" height="100" rx="17" transform="rotate(-33 521 401)" fill="none" stroke="url(#rim)" stroke-width="19" filter="url(#soft)"/>
 </svg>
