@@ -621,7 +621,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
 <style id="experience-editorial-polish">
 /* Experience-only editorial art direction: photo interlude + architectural dossier cards.
    Existing sticky deck JS, right-side year rail, hero and WebGL are deliberately untouched. */
-.experience-stack{padding-top:clamp(90px,10vw,150px)}
+.experience-stack{z-index:2!important;padding-top:clamp(90px,10vw,150px)}
 .experience-stack__intro{display:block;width:min(1240px,calc(100% - 96px));margin:0 auto}
 .experience-stack__intro-copy{max-width:1040px}
 .experience-stack__intro h2{max-width:1050px;font-size:clamp(42px,5.1vw,82px);line-height:1.035}
@@ -775,6 +775,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
  .experience-card[data-exp-index="4"] .experience-card__description{color:#C8DCE9}
 }
 @media (max-width:360px){
+ .experience-card__visual{width:100px;height:100px;opacity:.22}
  .experience-card__role{font-size:10.3px}
  .experience-card__heading{font-size:24px}
  .experience-card__lead,.experience-card__description{font-size:10.4px}
