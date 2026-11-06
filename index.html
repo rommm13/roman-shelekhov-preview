@@ -346,7 +346,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
   /* The WebGL canvas never travels through the viewport as a rectangle.
      Its contents are revealed from below by a feathered mask. */
   #app > canvas,#app[data-astro-cid-5hce7sga] > canvas{
-    transform:scale(1.10) !important;
+    transform:translate3d(0,9svh,0) scale(1.10) !important;
     transform-origin:center center !important;
     opacity:var(--mobile-scene-opacity,1) !important;
     -webkit-mask-image:linear-gradient(
@@ -368,6 +368,10 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
   body .cta-section p{color:#3B3A49 !important}
   body .cta-section .cta-section__title{color:#050419 !important}
   /* Preserve internal accordion separators, remove only section edges. */
+}
+@media (max-width:1023px){
+  /* Extend the hero runway so the 3D scene enters later, below the portrait. */
+  .hero-spacer{height:125svh !important;min-height:125svh !important}
 }
 </style>
 <style id="mobile-experience-layout">
@@ -438,7 +442,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
     inset:0;
     width:100vw;
     height:100svh;
-    background:transparent url(/roman-shelekhov-preview/media/scene-mobile-preview.webp) center center / cover no-repeat;
+    background:transparent url(/roman-shelekhov-preview/media/scene-mobile-preview.webp) center calc(50% + 9svh) / cover no-repeat;
     z-index:0;
     opacity:var(--mobile-scene-opacity,1);
     pointer-events:none;
@@ -540,7 +544,7 @@ body.scene-stage-active header.is-scrolled:not(.menu-open){
     hero.style.setProperty('--hero-hint-opacity',hint.toFixed(4));
     hero.style.setProperty('--hero-wash-opacity',wash.toFixed(4));
     if(window.innerWidth<=1023){
-      var reveal=116*phase(p,.055,.84);
+      var reveal=116*phase(p,.64,1.38);
       var exit=phase((vh*1.40-flowBottom)/vh,0,1);
       root.style.setProperty('--mobile-scene-reveal',reveal.toFixed(2)+'%');
       root.style.setProperty('--mobile-scene-opacity',(1-exit).toFixed(4));
