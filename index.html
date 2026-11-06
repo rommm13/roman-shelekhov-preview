@@ -239,7 +239,7 @@ header.is-scrolled{background-color:rgba(205,217,229,.94) !important}
   var pending=false;
   function update(){
     pending=false;
-    var passed=Math.max(0,-hero.getBoundingClientRect().top);
+    var passed=Math.max(0,(window.scrollY||window.pageYOffset||0)-(hero.offsetTop||0));
     var fadeDistance=Math.max(320,window.innerHeight*.78);
     var progress=Math.max(0,Math.min(1,(passed-10)/fadeDistance));
     hero.style.setProperty('--portrait-scroll-opacity',String((1-progress).toFixed(3)));
